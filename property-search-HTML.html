@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property search in html</title>
+</head>
+<body>
+<h1>Property search in HTML exercises</h1>
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <h3>
+        <label for="property-type">What kind off property are you looking for?</label>
+    </h3>
+    <select id="property-type" name="property-type">
+        <option value="house">House</option>
+        <option value="dep-bloc">Dep-bloc</option>
+        <option value="condo">Condo</option>
+        <option value="property-type">Property-type</option>
+    </select>
+    <div id="square footage">
+        <h3>Square Footage</h3>
+    <label for="min-footage">Min</label>
+    <input id="min-footage" name="min-footage" type="text" placeholder="Min ft">
+    <label for="max-footage">max</label>
+    <input id="max-footage" name="max-footage" type="text" placeholder="max ft">
+    <br>
+    </div>
+    <div id="price">
+        <h3>Price</h3>
+        <label for="min-price">Min</label>
+        <input id="min-price" name="min-price" type="text" placeholder="Min price">
+        <label for="max-price">max</label>
+        <input id="max-price" name="max-price" type="text" placeholder="max price">
+        <br>
+    </div>
+    <label for="zipcode">Zip Code</label>
+    <input id="zipcode" name="zipcode" type="number" placeholder="78202">
+    <br>
+    <div>
+        <br>
+        <label for="room-number">How many room are you looking for?</label>
+    <select id="room-number" name="room-number">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    </div>
+    <div>
+        <br>
+        <label for="restrooms-number">How many restrooms are you looking for?</label>
+        <select id="restrooms-number" name="restrooms-number">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+    </div>
+    <button type="submit">Search Now</button>
+</form>
+</body>
+</html>

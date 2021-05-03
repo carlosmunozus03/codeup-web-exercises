@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms exercises from HTML</title>
+</head>
+<body>
+
+<h1>Register With Us</h1>
+
+<h1>Forms Lecture</h1>
+<h2>Exploring the ever present forms in HTML</h2>
+
+<form method="POST" action="https://request-inspector.glitch.me/">
+
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" placeholder="Username here">
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" placeholder="Enter your Password">
+    <br>
+
+    <label for="body-text">Bio</label>
+    <br>
+    <textarea id="body-text" name="Bio" cols="30" rows="10" placeholder="Tell me something about yourself"></textarea>
+    <br>
+    <h3>How did you hear about us?</h3>
+    <label>
+        <input type="radio" name="q1" value="billboard">
+        billboard
+    </label>  <br>
+    <label>
+        <input type="radio" name="q1" value="Radio advertisement">
+        Radio advertisement
+    </label>  <br>
+    <label>
+        <input type="radio" name="q1" value="Internet advertisement">
+        Internet advertisement
+    </label>  <br>
+    <label>
+        <input type="radio" name="q1" value="Newspaper">
+        Newspaper
+    </label>  <br>
+    <label>
+        <input type="radio" name="q1" value="Youtube">
+        Youtube
+    </label>  <br>
+    <h3>What kind of browser do you used?</h3>
+    <br>
+    <label for="browsers"></label>
+    <select id="browsers" name="browsers">
+        <option value="Opera">Opera</option>
+        <option value="Google">Google</option>
+        <option value="Safari">Safari</option>
+        <option value="Firefox">Firefox</option>
+        <option value="Explorer">Explorer</option>
+    </select><br><hr>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

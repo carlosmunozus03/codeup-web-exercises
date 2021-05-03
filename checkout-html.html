@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkout in html</title>
+</head>
+<body>
+<h1>Checkout exercises in HTML</h1>
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <label for="cardholder">Cardholder's Name</label>
+    <input type="text" id="cardholder" required>
+    <br>
+    <label for="card-number">Card Number</label>
+    <input type="password" id="card-number" required>
+    <br>
+    <label for="date">Valid thru</label>
+    <input type="text" id="date" placeholder="MM / YY" required>
+    <br>
+    <label for="verification">CVV / CVC *</label>
+    <input type="password" id="verification" required>
+    <br>
+    <input id="connected" name="connected" type="checkbox" checked><span>Keep this credit card on file for future transactions</span>
+    <br>
+    <div>
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full-name" required>
+        <label for="full-email">Email</label>
+        <input type="text" id="full-email" name="full-email" placeholder="email@something.com" required><br>
+        <br>
+    <label for="city">City</label>
+    <input type="text" id="city" name="city" required>
+    <label for="state">State</label>
+    <input type="text" id="state" name="state" required>
+    <label for="zip">Zip</label>
+    <input type="text" id="zip" name="zip" required>
+    </div>
+    <input id="shipping-address" name="shipping-address" type="checkbox" checked><span>Shipping address same as billing?</span>
+    <br>
+    <button type="submit">Buy Now</button>
+</form>
+</body>
+</html>

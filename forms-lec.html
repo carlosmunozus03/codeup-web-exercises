@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Lecture</title>
+</head>
+<body>
+<h1>Forms Lecture</h1>
+<h2>Exploring the ever present forms in HTML</h2>
+
+<form method="POST" action="https://request-inspector.glitch.me/">
+
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" placeholder="Username">
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" placeholder="Password">
+    <br>
+
+    <label for="body-text">Tell me about yourself...</label>
+    <br>
+    <textarea id="body-text" name="body" cols="30" rows="10" placeholder="Hey! how are you?"></textarea>
+    <br>
+    <h3>What is the correct answer?</h3>
+
+    <input name="multi-choice" id="choice-a" value="wrong-1" type="radio">
+    <label for="choice-a">A</label>
+    <br>
+    <input name="multi-choice" id="choice-b" value="wrong-2" type="radio">
+    <label for="choice-b">B</label>
+    <br>
+    <input name="multi-choice" id="choice-c" value="correct" type="radio">
+    <label for="choice-c">C</label>
+    <br>
+    <input name="multi-choice" id="choice-d" value="wrong-3" type="radio">
+    <label for="choice-d">D</label>
+    <br>
+    <p>la informacion hasta aqui es un string</p>
+    <h3>How'd you hear about us?</h3>
+    <p>la informacion de aqui es un array</p>
+
+    <label for="ad-bb">Billboard</label>
+    <input id="ad-bb" name="advertising" value="billboard" type="checkbox">
+    <label for="ad-yt">YouTube</label>
+    <input id="ad-yt" name="advertising" value="youtube" type="checkbox">
+    <label for="ad-xx">Newspaper</label>
+    <input id="ad-xx" name="advertising" value="newspaper" type="checkbox">
+    <br>
+    <p>la informacion de aqui es on / off</p>
+    <p>ademas, con le atributo checked se seleccionara como determinado</p>
+    <input name="newsletter" type="checkbox" checked><span>Would you like to sign up gor our new letters?</span>
+    <br>
+    <h3>
+        <label for="coffee-preference">What kind off coffee roast do you like?</label>
+    </h3>
+    <select id="coffee-preference" name="coffee_preference">
+        <option value="light">Light Roast</option>
+        <option value="medium">Medium Roast</option>
+        <option value="dark">Dark Roast</option>
+        <option value="espresso">Espresso Blend</option>
+    </select>
+    <br>
+
+    <input name="the-answer" value="42" type="hidden">
+    <br>
+    <p>con disable, no envia los valores dentro del input</p>
+    <label for="nonactive">Ignore this...</label>
+    <input disabled  id="nonactive" name="userId" type="text" value="c-wd-988-sl2q-mhn">
+    <br>
+
+    <button type="submit">Submit</button>
+
+</form>
+</body>
+</html>

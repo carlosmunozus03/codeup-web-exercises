@@ -1,0 +1,21 @@
+.bg-pizza {
+    background-image: url("../img/pizza.png");
+    background-size: cover;
+}
+
+.jumbo-welcome {
+    text-align: center;
+    width: 100%;
+    opacity: 0.6;
+    background-color: lightgrey;
+}
+
+.tab-card-titles {
+    padding: 0.8em;
+    color: white;
+}
+
+label {
+    margin: 0;
+    padding-left: 1em;
+}

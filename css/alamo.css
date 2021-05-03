@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf)
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url(../fonts/Ubuntu/Ubuntu-Regular.ttf)
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url(../fonts/Ubuntu/Ubuntu-Bold.ttf);
+  font-weight: bold;
+}
+
+body {
+  margin-top: 85px;
+  font-family: Roboto, sans-serif;
+  background-color: #f1f0f0;
+  background-image: url(../img/logo.png);
+  background-repeat: repeat-x;
+  background-position: top;
+}
+
+div#tableContainer {
+  display: table;
+  border-spacing: 20px;
+}
+
+div#tableRow {
+  display: table-row;
+}
+
+main {
+  display: table-cell;
+  background-color: white;
+}
+
+#sidebar {
+  display: table-cell;
+  background-color: white;
+  vertical-align: top;
+}
+
+footer {
+  background-color: white;
+  vertical-align: top;
+}
+
+h1 {
+  font-family: Montserrat, sans-serif;
+  color: #0b850b;
+  text-align: center;
+  font-size: 1.9em;
+}
+
+h2, h3 {
+  color: #003b00;
+}
+
+h3 {
+  text-align: center;
+  position: relative;
+  right: 5px;
+}
+
+h1, .bottom-border {
+  border-bottom: 1px solid black;
+}
+
+ul {
+  list-style: square;
+}
+
+ol {
+  list-style: upper-latin;
+}
+
+q {
+  font-weight: bold;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+blockquote {
+  position: relative;
+  left: 8px;
+}
+
+a:link {
+  color: darkgreen;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+a:hover {
+  color: darkturquoise;
+}
+
+a:active {
+  color: hotpink;
+}
+
+img[src*="logo"] {
+  position: fixed;
+  bottom: 10px;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+  div#tableContainer, div#tableRow {
+    display: contents;
+  }
+
+  #main, #sidebar {
+    display: block;
+  }
+
+  img[src*="logo"] {
+    display: none;
+  }
+}

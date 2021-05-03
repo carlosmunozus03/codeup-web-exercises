@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf)
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url(../fonts/Ubuntu/Ubuntu-Regular.ttf)
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url(../fonts/Ubuntu/Ubuntu-Bold.ttf);
+  font-weight: bold;
+}
+
+body {
+  margin-top: 85px;
+  font-family: Roboto, sans-serif;
+  background-color: #f1f0f0;
+  background-image: url(../img/logo.png);
+  background-repeat: repeat-x;
+  background-position: top;
+}
+
+main {
+  margin: 0 330px 10px 10px;
+}
+
+#sidebar {
+  width: 300px;
+  position: absolute;
+  top: 130px;
+  right: 10px;
+  background-color: white;
+  margin: 0 10px 10px 10px;
+}
+
+footer {
+  background-color: white;
+  margin: 0 330px 10px 10px;
+}
+
+h1 {
+  font-family: Montserrat, sans-serif;
+  color: #0b850b;
+  text-align: center;
+  font-size: 1.9em;
+}
+
+h2, h3 {
+  color: #003b00;
+}
+
+h3 {
+  text-align: center;
+  position: relative;
+  right: 5px;
+}
+
+h1, .bottom-border {
+  border-bottom: 1px solid black;
+}
+
+ul {
+  list-style: square;
+}
+
+ol {
+  list-style: upper-latin;
+}
+
+q {
+  font-weight: bold;
+}
+
+blockquote {
+  position: relative;
+  left: 8px;
+}
+
+/*descendant selector*/
+
+/*section>p {*/
+/*    !*color: hotpink;*!*/
+/*}*/
+
+/*section p {*/
+/*    color: hotpink;*/
+/*}*/
+
+a:link {
+  color: darkgreen;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+a:hover {
+  color: darkturquoise;
+}
+
+a:active {
+  color: hotpink;
+}
+
+img[src*="logo"] {
+  position: fixed;
+  bottom: 10px;
+  right: 0;
+}
+
+/*.bottom-border:first-of-type {*/
+/*    border-width: 2px;*/
+/*}*/
+
+/*The :first-of-type pseudo-class represents an element that is the first sibling of its type in the list of children of its parent element*/
+/*p:first-of-type {*/
+/*    font-size: 110%;*/
+/*}*/
+
+/*p::first-letter {*/
+/*    font-size: 140%;*/
+/*}*/

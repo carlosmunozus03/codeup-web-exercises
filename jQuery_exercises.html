@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // window.onload = function () {
+        //     alert('The page has finished loading!');
+        // }
+    </script>
+</head>
+<body>
+<div id="header-container">
+    <h1 id="h-h1">jQuery exercise</h1>
+    <p id="h-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, molestias.</p>
+    <hr id="codeup">
+</div>
+<div id="body-container">
+    <ul>
+        <li class="codeup">List codeup 1</li>
+        <li class="codeup">List codeup 2</li>
+        <li class="codeup">List codeup 3</li>
+        <li class="codeup">List codeup 4</li>
+    </ul>
+    <hr>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {     // Comienza con esta function .ready
+
+        // Start jQuery Event Exercises Here!
+
+        // cambiar el fondo de color
+        $('#h-h1').click(function () {
+            $(this).css('background-color', 'salmon');
+        });
+
+        // doble click
+        $('#h-p').dblclick(function () {
+            $(this).css("font-size", function () {
+                return parseInt($(this).css('font-size')) * 2 + 'px';
+            });
+        });
+
+        //cambiar de color al pasar el mouse a rojo y volver a negro
+        $('li').hover(
+            function () {
+                $(this).css('color', 'red');
+            },
+            function () {
+                $(this).css('color', 'black');
+            }
+        );
+
+        // Finish jQuery Event Exercises Here!
+
+        // Start Exercise #1
+
+        // $('#header-container').html('here there are a header container');
+        // $('#body-container').html('here there are a body container');
+        // $('#h-content').html('something happen?'); // aun que tengan el mismo ID, solo afecta a el primer elemento!
+        // $('#h-h1').html('h1 title here!'); // se puede llamar colocandoo un alert('');
+        // $('#h-p').html(alert('paragraph with a lorem here!'));
+
+        // End Exercise #1
+
+        // Start Exercise #2
+
+        // $('.codeup').css('border',' 1px solid red');
+        // $('#codeup').css('border', '1px solid red'); // Esto es solo prueba
+
+        // End Exercise #2
+
+        // Start Exercise #3
+
+        //     $('li').css('font-size', '20px');
+        //     // $('h1, p, li').effect('highlight');
+        //     $('document').ready(function() {
+        //         $('h1, p, li').css('background-color', '#FF0');
+        //     });
+        //     // End Exercise #3
+    });
+</script>
+</body>
+</html>
