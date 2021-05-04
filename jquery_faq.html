@@ -197,10 +197,9 @@
 
 
     $("main aside ul li").each(function (index) {
-        $(this).css("background-color", "cornsilk");
-        // if (index % 2 !== 0) {
-        //     $(this).css("background-color", "cornsilk");
-        // }
+        if (index % 2 !== 0) {
+            $(this).css("background-color", "cornsilk");
+        }
         // if (index[ === 0) {
         //     $(this).css("color", "rebeccapurple");
         // }
