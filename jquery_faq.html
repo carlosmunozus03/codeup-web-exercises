@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nationals Parks</title>
+    <link rel="stylesheet" href="css/jquery_faq.css">
+</head>
+<body>
+<header>
+    <img class="logo" src="img/conaf-logo.jpg" alt="forest-corporation">
+    <h1>Forest Corporation</h1>
+</header>
+<nav>
+    <ul>
+        <li>Nationals Parks</li>
+        <li>Security</li>
+        <li>Camping</li>
+        <li>RV's</li>
+        <li>Trails</li>
+    </ul>
+</nav>
+<main>
+    <section class="pricing-plans">
+        <p>Frequents Questions and Answers</p>
+        <dl>
+            <dt>How much does the entrance to a National Park cost?</dt>
+            <dd class="invisible">Some protected areas have tariffed Access Rights (11 out of 46), including Bonus
+                Rates.
+
+                You can also check the entrance fees to each area by entering the tab you are interested in visiting and
+                working there, in the upper right column, the Fees section.
+            </dd>
+            <button>Know the updated rates</button>
+            <dt>How do you pay for access to a protected area? Do you accept credit card? Can I buy tickets through the
+                website?
+            </dt>
+            <dd class="invisible">The payment of Access Rights in the corresponding protected areas <a href="#">(see
+                more
+                here)</a>is
+                made in cash.
+
+                In the El Palmar, Iguazú, Lago Puelo, Los Arrayanes, Los Glaciares, Nahuel Huapi, Talampaya and Tierra
+                del Fuego National Parks credit / debit cards are accepted (Visa, Mastercard and / or Américan Express,
+                depending on the Park).
+                In addition, you can buy your ticket online in advance:
+            </dd>
+            <button>Buy your access ticket here</button>
+            <dt>Are there schedules to enter the Parks and Reserves?</dt>
+            <dd class="invisible">Most of the protected areas have both entry and exit times, especially in the case of
+                trails. It is
+                important that you check this information before making your visit to a Park or Reserve.
+            </dd>
+            <dt>Can I enter a protected area with my pet?</dt>
+            <dd class="invisible">Pets are not allowed in National Parks and Reserves because they are exotic species
+                that
+                alter the
+                environment and native fauna.
+            </dd>
+            <button>Know more</button>
+            <dt>I visited a protected area and I want to make a suggestion / complaint. Who am I talking to?</dt>
+            <dd class="invisible">On the page of each protected area you will find the direct contact of the National
+                Park
+                or
+                Reserve so
+                that you can directly send your suggestion.
+            </dd>
+            <dt>I want to share my images with National Parks. Where do I send them?</dt>
+            <dd class="invisible">Travelers who wish to share their images with National Parks so that they can later
+                be
+                published on
+                the
+                APN's social networks can send them through a private message to the agency's Facebook account. Of
+                course, we will mention your details in the image credits when we publish it.
+            </dd>
+            <dt>I want to volunteer in a protected area. As I do?</dt>
+            <dd class="invisible">In the regulations section you can access the Resolution and the corresponding
+                Annex of
+                the
+                National
+                Volunteer Program for National Parks, as well as the application.
+            </dd>
+            <button>Enter the regulations section</button>
+            <dt>I would like to record a documentary in a National Park. What steps should I take?</dt>
+            <dd class="invisible">For the realization of photographic and / or audiovisual productions, as well as for
+                notes
+                or press
+                information, send an email detailing the reasons for your request to <a href="#">conafnap@email
+                    .com</a></dd>
+            <dt>I want to work in National Parks. Where do I send my resume?</dt>
+            <dd class="invisible">Enter the <a href="#">Central Public Board of Public Job Offers</a>, upload your
+                personal
+                data and
+                upload your CV to
+                be notified of future opportunities.
+            </dd>
+            <dt>How do I become a National Park Ranger?</dt>
+            <dd class="invisible">All the information related to the training of National Park Rangers is available at
+                this
+                link. For
+                more information or particular inquiries, you can contact the Coordination of Training in Protecteddd
+                Areas by email at rangerpark@emain.com or by phone at (333) 444 5555.
+            </dd>
+        </dl>
+    </section>
+</main>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    "use strict";
+
+    $(document).ready(function () {
+        //elementos visible e invisible con un click
+        $(".invisible").click(function () {
+            $("dd").hide();
+        });
+        $("dt").click(function () {
+            $("dd").show();
+        });
+
+        // cambiar el fondo de color con un click
+        $('dt').click(function () {
+            $(this).css('background-color', 'lightgreen');
+        });
+        $('dt').click(function () {
+            $(this).addClass('background-color', '');
+        });
+
+        //cambiar de color al pasar el mouse a rojo y volver a negro
+        $('dt, dd, dl').hover(
+            function () {
+                $(this).css('color', 'green');
+            },
+            function () {
+                $(this).css('color', 'black');
+            }
+        );
+    });
+</script>
+</body>
+</html>

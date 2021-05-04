@@ -1,0 +1,26 @@
+.logo {
+    border-radius: 50%;
+    height: 20vh;
+    width: 20vh;
+}
+
+.output {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+p,
+dt {
+    font-weight: bold;
+}
+
+dl,
+dd {
+    font-size: .9rem;
+}
+
+dd {
+    margin-bottom: 1em;
+}
+/*.invisible {*/
+/*    visibility: hidden;*/
+/*}*/
