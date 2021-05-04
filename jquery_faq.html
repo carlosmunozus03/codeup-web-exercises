@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <title>Nationals Parks</title>
     <link rel="stylesheet" href="css/jquery_faq.css">
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+
+        .highlight {
+            background-color: lightgreen;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -24,7 +33,7 @@
         <p>Frequents Questions and Answers</p>
         <dl>
             <dt>How much does the entrance to a National Park cost?</dt>
-            <dd class="invisible">Some protected areas have tariffed Access Rights (11 out of 46), including Bonus
+            <dd>Some protected areas have tariffed Access Rights (11 out of 46), including Bonus
                 Rates.
 
                 You can also check the entrance fees to each area by entering the tab you are interested in visiting and
@@ -34,7 +43,7 @@
             <dt>How do you pay for access to a protected area? Do you accept credit card? Can I buy tickets through the
                 website?
             </dt>
-            <dd class="invisible">The payment of Access Rights in the corresponding protected areas <a href="#">(see
+            <dd>The payment of Access Rights in the corresponding protected areas <a href="#">(see
                 more
                 here)</a>is
                 made in cash.
@@ -46,26 +55,26 @@
             </dd>
             <button>Buy your access ticket here</button>
             <dt>Are there schedules to enter the Parks and Reserves?</dt>
-            <dd class="invisible">Most of the protected areas have both entry and exit times, especially in the case of
+            <dd>Most of the protected areas have both entry and exit times, especially in the case of
                 trails. It is
                 important that you check this information before making your visit to a Park or Reserve.
             </dd>
             <dt>Can I enter a protected area with my pet?</dt>
-            <dd class="invisible">Pets are not allowed in National Parks and Reserves because they are exotic species
+            <dd>Pets are not allowed in National Parks and Reserves because they are exotic species
                 that
                 alter the
                 environment and native fauna.
             </dd>
             <button>Know more</button>
             <dt>I visited a protected area and I want to make a suggestion / complaint. Who am I talking to?</dt>
-            <dd class="invisible">On the page of each protected area you will find the direct contact of the National
+            <dd>On the page of each protected area you will find the direct contact of the National
                 Park
                 or
                 Reserve so
                 that you can directly send your suggestion.
             </dd>
             <dt>I want to share my images with National Parks. Where do I send them?</dt>
-            <dd class="invisible">Travelers who wish to share their images with National Parks so that they can later
+            <dd>Travelers who wish to share their images with National Parks so that they can later
                 be
                 published on
                 the
@@ -73,7 +82,7 @@
                 course, we will mention your details in the image credits when we publish it.
             </dd>
             <dt>I want to volunteer in a protected area. As I do?</dt>
-            <dd class="invisible">In the regulations section you can access the Resolution and the corresponding
+            <dd>In the regulations section you can access the Resolution and the corresponding
                 Annex of
                 the
                 National
@@ -81,58 +90,66 @@
             </dd>
             <button>Enter the regulations section</button>
             <dt>I would like to record a documentary in a National Park. What steps should I take?</dt>
-            <dd class="invisible">For the realization of photographic and / or audiovisual productions, as well as for
+            <dd>For the realization of photographic and / or audiovisual productions, as well as for
                 notes
                 or press
                 information, send an email detailing the reasons for your request to <a href="#">conafnap@email
                     .com</a></dd>
             <dt>I want to work in National Parks. Where do I send my resume?</dt>
-            <dd class="invisible">Enter the <a href="#">Central Public Board of Public Job Offers</a>, upload your
+            <dd>Enter the <a href="#">Central Public Board of Public Job Offers</a>, upload your
                 personal
                 data and
                 upload your CV to
                 be notified of future opportunities.
             </dd>
             <dt>How do I become a National Park Ranger?</dt>
-            <dd class="invisible">All the information related to the training of National Park Rangers is available at
+            <dd>All the information related to the training of National Park Rangers is available at
                 this
                 link. For
                 more information or particular inquiries, you can contact the Coordination of Training in Protecteddd
                 Areas by email at rangerpark@emain.com or by phone at (333) 444 5555.
             </dd>
         </dl>
+        <button class="btn-1">On / Off</button>
     </section>
 </main>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script>
     "use strict";
 
-    $(document).ready(function () {
-        //elementos visible e invisible con un click
-        $(".invisible").click(function () {
-            $("dd").hide();
-        });
-        $("dt").click(function () {
-            $("dd").show();
-        });
+    // $(document).ready(function () {
+    // //elementos visible e invisible con un click
+    // $(".invisible").click(function () {
+    //     $("dd").hide();
+    // });
+    // $("dt").click(function () {
+    //     $("dd").show();
+    // });
+    //
+    // // cambiar el fondo de color con un click
+    // $('dt').click(function () {
+    //     $(this).css('background-color', 'lightgreen');
+    // });
+    // $('dt').click(function () {
+    //     $(this).addClass('background-color', '');
+    // });
+    //
+    // //cambiar de color al pasar el mouse a rojo y volver a negro
+    // $('dt, dd, dl').hover(
+    //     function () {
+    //         $(this).css('color', 'green');
+    //     },
+    //     function () {
+    //         $(this).css('color', 'black');
+    //     }
+    // );
+    $("dd").addClass("invisible");
+    $(".btn-1").click(function () {
+        $("dd").toggleClass("invisible");
+    });
 
-        // cambiar el fondo de color con un click
-        $('dt').click(function () {
-            $(this).css('background-color', 'lightgreen');
-        });
-        $('dt').click(function () {
-            $(this).addClass('background-color', '');
-        });
-
-        //cambiar de color al pasar el mouse a rojo y volver a negro
-        $('dt, dd, dl').hover(
-            function () {
-                $(this).css('color', 'green');
-            },
-            function () {
-                $(this).css('color', 'black');
-            }
-        );
+    $("dt").click(function () {
+        $(this).toggleClass("highlight");
     });
 </script>
 </body>
