@@ -112,6 +112,36 @@
         </dl>
         <button class="btn-1">On / Off</button>
     </section>
+    <aside>
+        <p>Nationals parks names</p>
+        <h3>Pumalín Park</h3>
+        <ul>
+            <li>It's 400,000-hectare</li>
+            <li>Nature reserve in the Palena Province of Chile</li>
+            <li>Reated by the United States environmental foundation The Conservation Land Trust</li>
+            <li>Was endowed and led by the American business magnate Doug Tompkins.</li>
+        </ul>
+        <h3>Torres del Paine National Park </h3>
+        <ul>
+            <li>Encompassing mountains, glaciers, lakes, and rivers</li>
+            <li>The park averages around 252,000 visitors a year</li>
+            <li>It's 6,728,744 hectares</li>
+            <li>They extend up to 8,200 ft above sea level</li>
+        </ul>
+        <h3>Conguillío National Park</h3>
+        <ul>
+            <li>Among the attractions in the park are the Llaima volcano</li>
+            <li>Sierra Nevada and wild landscapes characterized by islands of vegetation completely surrounded by vast
+                areas of lava flows.
+            </li>
+            <li>Extensive forests, formed mainly by Araucarias and Nothofagus species</li>
+            <li>The park was used as a filming location for Walking with Dinosaurs, a television series produced by the
+                BBC.
+            </li>
+        </ul>
+    </aside>
+    <button id="btn-change">Change Background color last list element</button>
+    <button id="btn-remove">Remove changes</button>
 </main>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script>
@@ -151,6 +181,24 @@
     $("dt").click(function () {
         $(this).toggleClass("highlight");
     });
+
+    // second exercise
+    $("#btn-change").click(function(){
+        $(this).prev().children().children().css("font-weight", "bold");
+    });
+    $("#btn-remove").click(function(){
+        $(this).prev().prev().children().children().css("font-weight", "none");
+    });
+    // $("#btn-change").click(function () {
+    //
+    // $("main aside ul li").each(function (index) {
+    //     if (index % 2 !== 0) {
+    //         $(this).css("background-color", "cornsilk");
+    //     }
+    //     // if (index === 0){
+    //     //     $(this).css("color", "rebeccapurple");
+    //     // }
+    // });
 </script>
 </body>
 </html>
