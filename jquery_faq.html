@@ -183,22 +183,28 @@
     });
 
     // second exercise
-    $("#btn-change").click(function(){
-        $(this).prev().children().children().css("font-weight", "bold");
+
+    //negrita con botones
+    $("#btn-change").click(function () {
+        var test = $(this).prev().children().children().css("font-weight", "bold");
+        console.log(test)
     });
-    $("#btn-remove").click(function(){
-        $(this).prev().prev().children().children().css("font-weight", "none");
+    $("#btn-remove").click(function () {
+        var test = $(this).prev().prev().children().children().css("font-weight", "");
+        console.log(test);
     });
-    // $("#btn-change").click(function () {
-    //
-    // $("main aside ul li").each(function (index) {
-    //     if (index % 2 !== 0) {
-    //         $(this).css("background-color", "cornsilk");
-    //     }
-    //     // if (index === 0){
-    //     //     $(this).css("color", "rebeccapurple");
-    //     // }
-    // });
+    //cambio de background color
+
+
+    $("main aside ul li").each(function (index) {
+        $(this).css("background-color", "cornsilk");
+        // if (index % 2 !== 0) {
+        //     $(this).css("background-color", "cornsilk");
+        // }
+        // if (index[ === 0) {
+        //     $(this).css("color", "rebeccapurple");
+        // }
+    });
 </script>
 </body>
 </html>
