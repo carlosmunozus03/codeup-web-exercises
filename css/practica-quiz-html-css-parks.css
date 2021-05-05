@@ -22,7 +22,8 @@ nav ul {
 }
 
 aside {
-    background-image: url("https://images.unsplash.com/photo-1446824505046-e43605ffb17f");
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-rKmOCCU5Iy_rpqiUkWK6ZzidzdL2c_pHdqzOftpNw5s1U1N59ZPi6pygRUcwQ4_-MFo&usqp=CAU");
+    background-repeat: no-repeat;
 }
 
 table, th, td {

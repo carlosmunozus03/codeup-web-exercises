@@ -1,3 +1,9 @@
+
+body {
+    background-color: #b9c1b9;
+    font-family: 'Roboto', sans-serif;
+}
+
 .logo {
     border-radius: 50%;
     height: 20vh;
@@ -8,16 +14,15 @@
     font: 1rem 'Fira Sans', sans-serif;
 }
 
-p,
-dt {
+p, dt {
     font-weight: bold;
 }
 
-dl,
-dd {
+dl, dd {
     font-size: .9rem;
 }
 
 dd {
     margin-bottom: 1em;
 }
+
