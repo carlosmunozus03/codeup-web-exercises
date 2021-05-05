@@ -110,7 +110,7 @@
                 Areas by email at rangerpark@emain.com or by phone at (333) 444 5555.
             </dd>
         </dl>
-        <button class="btn-1">Show or Hidden information</button>
+        <button>Show or Hidden information</button>
     </section>
     <aside>
         <p>Nationals parks names</p>
@@ -126,7 +126,7 @@
             <li>Encompassing mountains, glaciers, lakes, and rivers</li>
             <li>The park averages around 252,000 visitors a year</li>
             <li>It's 6,728,744 hectares</li>
-            <li class="last-li">They extend up to 8,200 ft above sea level</li>
+            <li>They extend up to 8,200 ft above sea level</li>
         </ul>
         <h3>Conguillío National Park</h3>
         <ul>
@@ -135,7 +135,7 @@
                 areas of lava flows.
             </li>
             <li>Extensive forests, formed mainly by Araucarias and Nothofagus species</li>
-            <li class="last-li">The park was used as a filming location for Walking with Dinosaurs, a television series
+            <li>The park was used as a filming location for Walking with Dinosaurs, a television series
                 produced by
                 the
                 BBC.
@@ -197,8 +197,8 @@
     });
     //cambio de background color
 
-
-    $('.last-li').css("background-color", 'lightgreen');
+    //
+    // $('.last-li').css("background-color", 'lightgreen');
 
     // $("main aside ul li").each(function (index) {
     //     if (index % 2 !== 0) {
@@ -208,7 +208,16 @@
     //     //     $(this).css("color", "rebeccapurple");
     //     // }
     // });
-
+    $("#btn-change").click(function () {
+        $('ul').each(function () {
+            $(this).children().last().css('background', 'lightgreen')
+        });
+    });
+    $("#btn-remove").click(function () {
+        $('ul').each(function () {
+            $(this).children().last().css('background', '')
+        });
+    });
 </script>
 </body>
 </html>
