@@ -9,10 +9,10 @@ var theTruck = {
     mileage: 10,
     tonneau: true,
     started: false,
-    start: function(){
+    start: function () {
         this.started = true;
     },
-    stop: function() {
+    stop: function () {
         this.started = false;
     },
     packages: {
@@ -20,8 +20,8 @@ var theTruck = {
         navigation: false,
         premiumOffRoad: true
     },
-    drive: function(){
-        if(this.started) {
+    drive: function () {
+        if (this.started) {
             console.log("vroom vroom!");
             this.mileage++;
         } else {
@@ -39,7 +39,7 @@ var yourTruck = {
     color: "Red",
     tonneau: false,
     mileage: 101250,
-    drive: function(){
+    drive: function () {
         console.log("vroom vroom!");
         this.mileage++;
     }

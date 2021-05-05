@@ -1,39 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap');
+
 body {
     background-color: whitesmoke;
     background-image: url("../img/b1.png");
     font-family: 'Kiwi Maru', serif;
 }
+
 .fancy-header {
     color: indianred;
     text-align: center;
 }
+
 h1 {
     color: darkolivegreen;
     text-decoration: underline;
 }
+
 ul {
     list-style: katakana;
 }
+
 .ol-list1 {
     list-style: upper-roman;
 }
+
 .ol-list2 {
     list-style: upper-alpha;
 }
+
 td, tr {
     padding: 2px
 }
+
 th {
     font-weight: bold;
     text-decoration: underline;
 }
+
 a:hover {
     color: green;
 }
+
 a:active {
     color: red;
 }
+
 a:visited {
     color: red;
 }

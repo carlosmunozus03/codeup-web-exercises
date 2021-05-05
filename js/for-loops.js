@@ -1,14 +1,14 @@
 "use strict";
 
-// var number = 7;
-//
-// console.log(number + " * 1 = " + number * 1);
-// console.log(number + " * 2 = " + number * 2);
-// console.log(number + " * 3 = " + number * 3);
-//
-// for (var multiplier = 1; multiplier <= 10; multiplier++) {
-//     console.log(number + " * " + multiplier + " = " + number * multiplier);
-// }
+var number = 7;
+
+console.log(number + " * 1 = " + number * 1);
+console.log(number + " * 2 = " + number * 2);
+console.log(number + " * 3 = " + number * 3);
+
+for (var multiplier = 1; multiplier <= 10; multiplier++) {
+    console.log(number + " * " + multiplier + " = " + number * multiplier);
+}
 
 function showMultiplicationTable(number) {
     for (var multiplier = 1; multiplier <= 10; multiplier++) {
@@ -51,6 +51,9 @@ for (var i = 1; i < 10; i++) {
     console.log(outputString);
 }
 
+for (var i = 100; i > 0; i = i - 5) {
+    console.log(i);
+}
 
 var string = "";
 for (var i = 0; i < 8; i++) {
@@ -62,9 +65,4 @@ for (var i = 0; i < 8; i++) {
     }
     string = string + word;
     console.log("Your sentence is: " + string);
-}
-
-
-for (var i = 0; i < 10; i++) {
-    console.log('for loop iteration #' + i);
 }
