@@ -13,6 +13,7 @@ nav {
     background-image: url("https://images.unsplash.com/photo-1446824505046-e43605ffb17f");
     background-size: cover;
 }
+
 article img {
     width: 100%;
     border-radius: 3%;
@@ -22,16 +23,19 @@ section img {
     width: 100%;
     border-radius: 3%;
 }
+
 .merlin-map {
     height: 50vh;
     width: 50%;
     border-radius: 5%;
 }
+
 .bird-color {
     height: 30vh;
     width: 40vw;
     border-radius: 5%;
 }
+
 .list-Psittacopasserae {
     list-style: circle;
 }
