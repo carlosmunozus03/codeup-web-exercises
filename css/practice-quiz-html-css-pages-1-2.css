@@ -11,6 +11,7 @@ h1 {
 
 nav {
     background-image: url("https://images.unsplash.com/photo-1446824505046-e43605ffb17f");
+    background-size: cover;
 }
 article img {
     width: 100%;
@@ -41,6 +42,7 @@ nav ul {
 
 aside {
     background-image: url("https://images.unsplash.com/photo-1446824505046-e43605ffb17f");
+    background-size: cover;
 }
 
 table, th, td {

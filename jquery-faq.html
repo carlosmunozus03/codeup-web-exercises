@@ -173,33 +173,15 @@
 <script src="js/jquery-3.6.0.min.js"></script>
 <script>
     "use strict";
+    $('dd').hover(
+        function () {
+            $(this).css('color', 'red');
+        },
+        function () {
+            $(this).css('color', 'black');
+        }
+    );
 
-    // $(document).ready(function () {
-    // //elementos visible e invisible con un click
-    // $(".invisible").click(function () {
-    //     $("dd").hide();
-    // });
-    // $("dt").click(function () {
-    //     $("dd").show();
-    // });
-    //
-    // // cambiar el fondo de color con un click
-    // $('dt').click(function () {
-    //     $(this).css('background-color', 'lightgreen');
-    // });
-    // $('dt').click(function () {
-    //     $(this).addClass('background-color', '');
-    // });
-    //
-    // //cambiar de color al pasar el mouse a rojo y volver a negro
-    // $('dt, dd, dl').hover(
-    //     function () {
-    //         $(this).css('color', 'green');
-    //     },
-    //     function () {
-    //         $(this).css('color', 'black');
-    //     }
-    // );
     $("dd").addClass("invisible");
     $(".btn-1").click(function () {
         $("dd").toggleClass("invisible");
@@ -209,14 +191,6 @@
         $('btn1').toggleClass("highlight");
     });
     $("dd").addClass("invisible");
-
-    // $(".btn-1").click(function () {
-    //     $("dd").toggleClass("invisible");
-    // });
-    //
-    // $("dt").click(function () {
-    //     $(this).toggleClass("highlight");
-    // });
 
     // second exercise
 
@@ -229,20 +203,8 @@
         var test = $(this).prev().prev().children().children().css("font-weight", "");
         console.log(test);
     });
+
     //cambio de background color
-
-    // usando una clase especifica en la ultima lista
-    // $('.last-li').css("background-color", 'lightgreen');
-
-    // $("main aside ul li").each(function (index) {
-    //     if (index % 2 !== 0) {
-    //         $(this).css("background-color", "cornsilk");
-    //     }
-    //     // if (index[ === 0) {
-    //     //     $(this).css("color", "rebeccapurple");
-    //     // }
-    // });
-
     // usando un each
     $("#btn-change").click(function () {
         $('ul').each(function () {
