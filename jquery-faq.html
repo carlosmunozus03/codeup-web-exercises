@@ -16,21 +16,28 @@
 </head>
 <body>
 <header>
-    <img class="logo" src="img/conaf-logo.jpg" alt="forest-corporation">
-    <h1>Forest Corporation</h1>
+    <img class="logo"
+         src="https://global.hurtigruten.com/globalassets/photos/excursions/explorer/south-america/puerto-nat-torres-del-paine/torres-del-paine_158405324kavram-shutterstock_2500x1250.jpg?width=1900&height=950&center=0.57,0.51&transform=DownResizeCrop"
+         alt="fitz-roy">
+    <h1 align="center">Return to Freedom</h1>
 </header>
 <nav>
-    <img src="" alt="">
     <ul>
-        <li>Nationals Parks</li>
-        <li>Security</li>
-        <li>Camping</li>
-        <li>RV's</li>
-        <li>Trails</li>
+        <li><a href="https://www.gochile.cl/en/destinations-national-parks.htm">Nationals Parks</a></li>
+        <li><a href="https://www.nps.gov/aboutus/faqs.htm">Security</a></li>
+        <li><a href="https://www.worldlyadventurer.com/camping-in-torres-del-paine/">Camping</a></li>
+        <li><a href="https://www.yellowdogflyfishing.com/blog/seven-wade-fishing-destinations-patagonia/">Fishing</a></li>
+        <li><a href="https://www.planetware.com/argentina/top-rated-hiking-trails-in-patagonia-arg-1-10.htm">Trails</a>
+        </li>
     </ul>
 </nav>
 <main>
-    <section class="pricing-plans">
+    <section>
+        <img src="https://live.staticflickr.com/6128/5941288550_400006f5f6_b.jpg"
+             alt="forestin">
+        <img src="https://previews.123rf.com/images/popaukropa/popaukropa1611/popaukropa161100067/66666905-deja-de-fogata-est%C3%A1-prohibido-hacer-fuego-emblema-contra-las-llamas-se%C3%B1al-de-prohibici%C3%B3n-rojo-prohibici%C3%B3n-de-la.jpg"
+             alt="fire">
+        <hr>
         <p>Frequents Questions and Answers</p>
         <dl>
             <dt>How much does the entrance to a National Park cost?</dt>
@@ -40,7 +47,7 @@
                 You can also check the entrance fees to each area by entering the tab you are interested in visiting and
                 working there, in the upper right column, the Fees section.
             </dd>
-            <a href="#">Know the updated rates</a>
+            <button><a href="#">Know the updated rates</a></button>
             <dt>How do you pay for access to a protected area? Do you accept credit card? Can I buy tickets through the
                 website?
             </dt>
@@ -54,7 +61,7 @@
                 depending on the Park).
                 In addition, you can buy your ticket online in advance:
             </dd>
-            <a href="#">Buy your access ticket here</a>
+            <button><a href="#">Buy your access ticket here</a></button>
             <dt>Are there schedules to enter the Parks and Reserves?</dt>
             <dd>Most of the protected areas have both entry and exit times, especially in the case of
                 trails. It is
@@ -66,7 +73,7 @@
                 alter the
                 environment and native fauna.
             </dd>
-            <a href="#">Know more</a>
+            <button><a href="#">Know more</a></button>
             <dt>I visited a protected area and I want to make a suggestion / complaint. Who am I talking to?</dt>
             <dd>On the page of each protected area you will find the direct contact of the National
                 Park
@@ -89,7 +96,7 @@
                 National
                 Volunteer Program for National Parks, as well as the application.
             </dd>
-            <a href="#">Enter the regulations section</a>
+            <button><a href="#">Enter the regulations section</a></button>
             <dt>I would like to record a documentary in a National Park. What steps should I take?</dt>
             <dd>For the realization of photographic and / or audiovisual productions, as well as for
                 notes
@@ -111,25 +118,31 @@
                 Areas by email at rangerpark@emain.com or by phone at (333) 444 5555.
             </dd>
         </dl>
-        <button>Show or Hidden information</button>
+        <hr>
+        <button class="btn-1">Show or Hidden information</button>
     </section>
     <aside>
         <p>Nationals parks names</p>
         <h3>Pumalín Park</h3>
+        <img src="http://www.nuestro.cl/wp-content/uploads/2018/12/Pumal%C3%ADn-Park.jpg" alt="pumalin">
         <ul>
             <li>It's 400,000-hectare</li>
             <li>Nature reserve in the Palena Province of Chile</li>
             <li>Reated by the United States environmental foundation The Conservation Land Trust</li>
-            <li class="last-li">Was endowed and led by the American business magnate Doug Tompkins.</li>
+            <li>Was endowed and led by the American business magnate Doug Tompkins.</li>
         </ul>
+        <hr>
         <h3>Torres del Paine National Park </h3>
+        <img src="https://cdn.getyourguide.com/img/location/5d13c5084862b.jpeg/88.jpg" alt="torres">
         <ul>
             <li>Encompassing mountains, glaciers, lakes, and rivers</li>
             <li>The park averages around 252,000 visitors a year</li>
             <li>It's 6,728,744 hectares</li>
             <li>They extend up to 8,200 ft above sea level</li>
         </ul>
+        <hr>
         <h3>Conguillío National Park</h3>
+        <img src="https://img5.goodfon.com/wallpaper/nbig/e/b4/park-osen-listva-park-autumn-fall.jpg" alt="conguillio">
         <ul>
             <li>Among the attractions in the park are the Llaima volcano</li>
             <li>Sierra Nevada and wild landscapes characterized by islands of vegetation completely surrounded by vast
@@ -142,6 +155,7 @@
                 BBC.
             </li>
         </ul>
+        <hr>
     </aside>
     <button id="btn-change">Change Background color last list element</button>
     <button id="btn-remove">Remove changes</button>
@@ -182,8 +196,17 @@
     });
 
     $("dt").click(function () {
-        $(this).toggleClass("highlight");
+        $('btn1').toggleClass("highlight");
     });
+    $("dd").addClass("invisible");
+
+    // $(".btn-1").click(function () {
+    //     $("dd").toggleClass("invisible");
+    // });
+    //
+    // $("dt").click(function () {
+    //     $(this).toggleClass("highlight");
+    // });
 
     // second exercise
 
