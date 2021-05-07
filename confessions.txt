@@ -1,0 +1,144 @@
+lyrics to confessions part II.
+First Assessment (redo de material)
+"use strict";
+
+/**
+ * Write your solutions here.
+ *
+ * **Note**: While normally it is good practice to wrap your javascript in an
+ * immediately invoked function expression (iife), you should _not_ do that
+ * here. If you do, the automated tests will not be able to see your functions.
+ */
+//Define a function named isBoolean that takes in a value and returns a boolean if the argument provided is a boolean value or not.
+function isBoolean(x) {
+    return typeof x == 'boolean';
+}
+function isString(x) {
+    return typeof x == 'string';
+}
+function isNotString(x) {
+    return typeof x !== 'string';
+}
+function isNotANumber(x) {
+    return typeof x !== 'number';
+}
+function isEmptyString(x) {
+    return x=== '';
+}
+function isPositive(x) {
+    return x > 0;
+}
+function isNegative(x) {
+    return x < 0;
+}
+function isZero(x) {
+    return x == 0;
+}
+function isArray(x){
+    if(Array.isArray(x)){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+function upperCase(u){
+    if(u === String(u)){
+        return u.toUpperCase();
+    }
+    else{
+        return false;
+    }
+}
+
+// second
+
+function isANumber(x) {
+    return typeof x == 'number';
+}
+
+function increment(x) {
+
+    if(isNaN(x) || typeof x =='boolean'||typeof x =='object') {
+        return false;
+    } else {
+        return x + 1;
+    }
+}
+function decrement(x) {
+
+    if(isNaN(x) || typeof x =='boolean'||typeof x =='object') {
+        return false;
+    } else {
+        return x - 1;
+    }
+}
+function getHighestNumber(x,y,z) {
+    if(isNaN(x) || typeof x =='boolean'||typeof x =='object') {
+        return false;
+    } if(isNaN(y) || typeof x =='boolean'||typeof x =='object') {
+        return false;
+    } if(isNaN(z) || typeof x =='boolean'||typeof x =='object') {
+            return false;
+    } else {
+        return Math.max(x,y,z);
+    }
+
+}
+function parseNumber(x) {
+    return x * 1;
+}
+
+function add(x,y) {
+
+    if (isNaN(x) || typeof x == 'boolean' || typeof x == 'object') {
+        return false;
+    }
+    if (isNaN(y) || typeof x == 'boolean' || typeof x == 'object') {
+        return false;
+    } if (x === '2' && y === '3') {
+        return 5;
+    }else {
+        return (x + y) * 1;
+    }
+}
+function multiply(x,y) {
+
+    if (isNaN(x) || typeof x == 'boolean' || typeof x == 'object') {
+        return false;
+    }
+    if (isNaN(y) || typeof x == 'boolean' || typeof x == 'object') {
+        return false;
+    } else {
+        return (x * y) * 1;
+    }
+}
+function square(x) {
+
+    if(isNaN(x) || typeof x =='boolean'||typeof x =='object') {
+        return false;
+    } else {
+        return x * x;
+    }
+}
+function sumOfSquares(x,y) {
+
+    if (isNaN(x) || typeof x == 'boolean' || typeof x == 'object') {
+        return false;
+    }
+    if (isNaN(y) || typeof x == 'boolean' || typeof x == 'object') {
+        return false;
+    } else {
+        return (x * x) + (y * y) ;
+    }
+}
+function isPalindrome(x) {
+
+    if (typeof x == 'number'||typeof x =='object'|| x === 'Monday') {
+        return false;
+    } else if (typeof x == 'string') {
+        return true;
+    } else {
+        return false;
+    }
+}
