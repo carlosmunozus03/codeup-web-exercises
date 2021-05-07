@@ -1,1 +1,0 @@
-const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1IjoiY2FybG9zbXVub3p1czA0IiwiYSI6ImNrb2VnZnAyNjA2NWIydm1panpiY3N3dm0ifQ.CLykMVCygEvAuP03Ls0q7w'
