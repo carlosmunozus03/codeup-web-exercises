@@ -17,8 +17,11 @@
 <!--CAN CHANGE THE HEIGHT AND WIDTH-->
 <div id='map' style='width: 400px; height: 300px;'></div>
 
+<!--HERE THE KEYS.JS-->
 <script src="js/keys.js"></script>
 
+<!--HERE THE GEOCODER FOR SHOW EXAMPLES-->
+<script src="js/mapbox-goecoder-utils.js"></script>
 <!--MOVE THE API HERE-->
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
@@ -64,6 +67,15 @@
     marker.setPopup(popup);
     popup.addClassName('popup-font')
 
+    // SHOW THE COORDINATES WHEN YOU PASS AN ADDRESS
+    geocode('600 Navarro St #600, San Antonio, TX 78205', MAPBOX_ACCESS_TOKEN).then(function (results) {
+        console.log(results);
+    });
+
+    // SHOW THE ADDRESS COORDINATES
+    reverseGeocode({lng: -96.79, Lat: 32.77}, MAPBOX_ACCESS_TOKEN).then(function (results) {
+        console.log(results);
+    });
 </script>
 
 </body>
