@@ -53,35 +53,36 @@
     map.addControl(new mapboxgl.NavigationControl());
 
 
-    // MARKER OBJECTS
-    // var marker = new mapboxgl.Marker()
-    //     .setLngLat([-97.0403, 32.8998])
+    // // MARKER OBJECTS
+    //
+    // // var marker = new mapboxgl.Marker()
+    // //     .setLngLat([-97.0403, 32.8998])
+    // //     .addTo(map);
+    //
+    //
+    // // MARKET OBJECTS SET OPTIONS
+    // var marker = new mapboxgl.Marker({
+    //     color: "red",
+    // }).setLngLat([-98.4683, 29.5312])
+    //     .addTo(map)
+    //     .setDraggable(true)
+    //
+    // //  ADD A ALERT WITH A COMMENT
+    // marker.on('dragend', function () {
+    //     alert('the market has been moved')
+    // });
+    //
+    // // INSTANTIATION OF POPUPS OBJECT
+    //
+    // var popup = new mapboxgl.Popup()
+    //     .setLngLat(marker.getLngLat())
+    //     .setHTML("<h3>You are Here!</h3>")
+    //     .setMaxWidth("100")
     //     .addTo(map);
-
-
-    // MARKET OBJECTS SET OPTIONS
-    var marker = new mapboxgl.Marker({
-        color: "red",
-    }).setLngLat([-98.4683, 29.5312])
-        .addTo(map)
-        .setDraggable(true)
-
-    //  ADD A ALERT WITH A COMMENT
-    marker.on('dragend', function () {
-        alert('the market has been moved')
-    });
-
-    // INSTANTIATION OF POPUPS OBJECT
-
-    var popup = new mapboxgl.Popup()
-        .setLngLat(marker.getLngLat())
-        .setHTML("<h1>You are Here!</h1>")
-        .setMaxWidth("300px")
-        .addTo(map);
-
-
-    //YOU CAN DO THIS TOO
-    marker.setPopup(popup);
+    //
+    //
+    // // YOU CAN DO THIS TOO
+    // marker.setPopup(popup);
 
 </script>
 

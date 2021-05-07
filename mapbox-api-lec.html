@@ -6,7 +6,11 @@
     <!--MAPBOX TAGS HERE-->
 
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
-
+    <style>
+        .popup-font {
+            font-family: Roboto, sans-serif;
+        }
+    </style>
 </head>
 <body>
 <h1>Welcome to Mapbox</h1>
@@ -35,6 +39,30 @@
     map.setCenter([-98.4683, 29.5312]); // CHANGE THE POSITION [LNG, LAT]
 
     console.log(map.getCenter());
+
+    // MARKET OBJECTS SET OPTIONS
+    var marker = new mapboxgl.Marker({
+        color: "red",
+    }).setLngLat([-98.4683, 29.5312])
+        .addTo(map)
+        .setDraggable(true);
+
+    //  ADD A ALERT WITH A COMMENT
+    marker.on('dragend', function () {
+        alert('the market has been moved')
+    });
+
+    // INSTANTIATION OF POPUPS OBJECT
+
+    var popup = new mapboxgl.Popup()
+        .setLngLat(marker.getLngLat())
+        .setHTML("<h3>You are Here!</h3>")
+        .setMaxWidth("100")
+        .addTo(map);
+
+    // YOU CAN DO THIS TOO
+    marker.setPopup(popup);
+    popup.addClassName('popup-font')
 
 </script>
 
