@@ -17,7 +17,25 @@
         th {
             font-weight: bold;
         }
+
+        #insertProducts {
+            float: left;
+            margin: 0 .5em;
+            width: calc(25% - 1em);
+        }
+
+        #btn {
+            border: 1px solid grey;
+            color: red;
+            background: white;
+            font-weight: bold;
+            padding: 8px;
+            border-radius: 5px;
+            margin-top: 300px;
+        }
     </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <h1>My Tool Store</h1>
@@ -34,7 +52,7 @@
 
     <tbody id="insertProducts"></tbody>
 </table>
-<button id="btn-click">Click Here!</button>
+<button id="btn">Refresh</button>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 

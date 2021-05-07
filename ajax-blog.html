@@ -3,19 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>ajax blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        th, td, p, input, h3 {
+            font: 15px 'Segoe UI';
+        }
+
+        table, th, td {
+            border: solid 1px #ddd;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+
+        th {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
 <div id="posts">
 
 </div>
+<button id="the-button"></button>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
     $.ajax("data/blog.json").done(function (blog) {
         console.log(blog);
+
+        var html = '<table class="table table-striped">';
+        html += '<tr>';
+        $.each(blog[0], function (index,) {
+            html += '<th>' + index + '</th>';
+        });
+        html += '</tr>';
+        $.each(blog, function (index, value) {
+            html += '<tr>';
+            $.each(value, function (index2, value2) {
+                html += '<td>' + value2 + '</td>';
+            });
+            html += '<tr>';
+        });
+        html += '</table>';
+        $('body').html(html);
     });
+
 </script>
 </body>
 </html>
