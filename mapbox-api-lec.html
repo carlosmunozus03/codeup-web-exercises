@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mapbox API</title>
+    <title>Mapbox API exercise</title>
     <!--MAPBOX TAGS HERE-->
 
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
@@ -10,6 +10,11 @@
         .popup-font {
             font-family: Roboto, sans-serif;
         }
+
+        .font {
+            font-family: 'Xanh Mono', monospace;
+        }
+
     </style>
 </head>
 <body>
@@ -17,9 +22,16 @@
 <!--CAN CHANGE THE HEIGHT AND WIDTH-->
 <div id='map' style='width: 400px; height: 300px;'></div>
 
+<!--HERE BUTTON FOR LOOKING FOR THE ADDRESS-->
+
+<label for="input">Type an address:</label>
+<input type="text" id="input">
+<button id="btn">Click me to move someplace!</button>
+
 <!--HERE THE KEYS.JS-->
 <script src="js/keys.js"></script>
-
+<!--HERE THE JQUERY FOR WORK THE LOCATION WHEN PRESS A BUTTON-->
+<script src="js/jquery-3.6.0.min.js"></script>
 <!--HERE THE GEOCODER FOR SHOW EXAMPLES-->
 <script src="js/mapbox-goecoder-utils.js"></script>
 <!--MOVE THE API HERE-->
@@ -68,13 +80,29 @@
     popup.addClassName('popup-font')
 
     // SHOW THE COORDINATES WHEN YOU PASS AN ADDRESS
-    geocode('600 Navarro St #600, San Antonio, TX 78205', MAPBOX_ACCESS_TOKEN).then(function (results) {
+    geocode('San Antonio', MAPBOX_ACCESS_TOKEN).then(function (results) {
         console.log(results);
     });
 
     // SHOW THE ADDRESS COORDINATES
     reverseGeocode({lng: -96.79, Lat: 32.77}, MAPBOX_ACCESS_TOKEN).then(function (results) {
         console.log(results);
+    });
+
+    // HERE ENTER THE NAME IN A BUTTON FOR LOOKING FOR THE SPECIFIC ADDRESS
+
+    $("#btn").click(function () {
+        var userInput = $("#input").val();
+        geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
+            console.log(info);
+            var newCenter = {
+                lng: info[0],
+                lat: info[1]
+            };
+            marker.setLngLat(newCenter);
+            popup.setHTML('<h3 class="font">' + userInput + '</h3>');
+            map.flyTo({center: newCenter});
+        });
     });
 </script>
 
