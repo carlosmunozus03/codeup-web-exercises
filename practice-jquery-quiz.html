@@ -46,16 +46,22 @@
             text-align: center;
         }
 
-        button {
-            position: center;
+        #buttons {
+            margin-top: 120px;
+        }
+
+        #btn-box {
+            margin-left: 620px;
         }
     </style>
 </head>
 <body>
 <div id="container">Practice</div>
 <div id="box">Practice</div>
-<button id="btn-container">Change!</button>
-<button id="btn-box">Change!</button>
+<div id="buttons">
+    <button id="btn-container">Change Left</button>
+    <button id="btn-box">Change Right</button>
+</div>
 <!--ADDED JQUERY CODE HERE-->
 <script src="js/jquery-3.6.0.min.js"></script>
 <!--SCRIPT JUST FOR PRACTICE HERE-->
@@ -71,9 +77,13 @@
     // };
 
     //    NOW WITH JQUERY HERE
-    $('#btn-container').dblclick(function () {
+    $('#btn-container').click(function () {
         $('#container').css('background', 'blueviolet');
     });
+    $('#btn-box').click(function () {
+        $('#box').css('background', 'blueviolet');
+    });
+
     //HERE FOR CONTAINER (LEFT BOX)
     $('#container').mouseenter(function () {
         $('#container').css('background', 'green');
