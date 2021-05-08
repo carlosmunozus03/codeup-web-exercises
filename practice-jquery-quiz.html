@@ -2,9 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>jquery practice for quiz and assessment</title>
+    <!--    STYLE HERE JUST FOR PRACTICE-->
+    <style>
+        * {
+            margin: 0;
+            padding: 10px;
+            list-style: none;
+            text-decoration: none;
+            font-family: sans-serif;
+        }
+
+        #container {
+            /*VERTICAL AND HORIZONTAL TEXT CENTERING USING FLEXBOX */
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            /*HERE START NORMAL CSS CODE*/
+            height: 100px;
+            width: 200px;
+            background: red;
+            cursor: pointer;
+            color: cornsilk;
+            text-align: center;
+            /*ADDED POSITION FOR MOVE BOX TO RIGHT IN SAME LINE*/
+            position: absolute;
+        }
+
+        #box {
+            /*VERTICAL AND HORIZONTAL TEXT CENTERING USING FLEXBOX */
+            display: flex;
+            float: right;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            /*HERE START NORMAL CSS CODE*/
+            height: 100px;
+            width: 200px;
+            background: red;
+            cursor: pointer;
+            color: cornsilk;
+            text-align: center;
+        }
+
+        button {
+            position: center;
+        }
+    </style>
 </head>
 <body>
+<div id="container">Practice</div>
+<div id="box">Practice</div>
+<button id="btn-container">Change!</button>
+<button id="btn-box">Change!</button>
+<!--ADDED JQUERY CODE HERE-->
+<script src="js/jquery-3.6.0.min.js"></script>
+<!--SCRIPT JUST FOR PRACTICE HERE-->
+<script>
+    // // 1.- GET THE ELEMENT
+    // var box = document.querySelector('#container');
+    // // 2.- ADD A EVENT
+    // box.addEventListener('click', changeColor);
+    //
+    // // 3.- ADD A FUNCTION
+    // function changeColor() {
+    //     box.style.background = 'green';
+    // };
+
+    //    NOW WITH JQUERY HERE
+    $('#btn-container').dblclick(function () {
+        $('#container').css('background', 'blueviolet');
+    });
+    //HERE FOR CONTAINER (LEFT BOX)
+    $('#container').mouseenter(function () {
+        $('#container').css('background', 'green');
+    });
+    $('#container').mouseleave(function () {
+        $('#container').css('background', '');
+    });
+    //HERE FOR BOX (RIGHT BOX)
+    $('#box').mouseenter(function () {
+        $('#box').css('background', 'blue');
+    });
+    $('#box').mouseleave(function () {
+        $('#box').css('background', '');
+    });
+</script>
 
 </body>
 </html>
