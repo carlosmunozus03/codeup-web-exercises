@@ -70,6 +70,14 @@
         button {
             padding: 10px;
         }
+
+        #box2 {
+            position: relative;
+            height: 50px;
+            width: 50px;
+            background: darkorange;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -85,9 +93,13 @@
 <div class="boxes"></div>
 
 <!--HERE PRACTICE CHANGE ATTRIBUTE-->
-<input type="text" placeholder="username">
-<input type="password" placeholder="password">
+<!--HERE SHOW ATTRIBUTE PRACTICE-->
+<input type="text" placeholder="username" value="">
+<input type="password" placeholder="password" value="">
 <button id="btn-submit">Submit</button>
+
+<!--ADD NEW ATTRIBUTE WITH ATTR-->
+<div id="box2"></div>
 
 <!--ADDED JQUERY CODE HERE-->
 <script src="js/jquery-3.6.0.min.js"></script>
@@ -137,6 +149,25 @@
     });
     $('#btn-submit').click(function () {
         $('[type="password"]').css({background: 'lightblue'});
+    });
+
+    // HERE SHOW ATTRIBUTE JQUERY
+    // HERE CREATED VAR FOR SAVE THE USER PUT IN THERE JQUERY
+    var username = '';
+    var password = '';
+
+    $('#btn-submit').click(function () {
+        username = $('[type="text"]').val();
+        password = $('[type="password"]').val();
+
+        // HERE SHOW IN CONSOLE
+        console.log(username);
+        console.log(password);
+    });
+
+    //ADD ATTRIBUTE WITH ATTR RESUME SET AND GET (ATTRIBUTE NAME, ATTRIBUTE VALUE)
+    $('#box2').click(function (){
+        $(this).attr('Carlos', 'Zero')
     });
 
 </script>
