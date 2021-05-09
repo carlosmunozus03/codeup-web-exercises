@@ -53,6 +53,23 @@
         #btn-box {
             margin-left: 620px;
         }
+
+        .boxes {
+            position: relative;
+            height: 100px;
+            width: 100px;
+            cursor: pointer;
+            background: greenyellow;
+            margin: 20px;
+        }
+
+        input {
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -62,6 +79,16 @@
     <button id="btn-container">Change Left</button>
     <button id="btn-box">Change Right</button>
 </div>
+
+<!--HERE CONTINUE PRACTICE-->
+<div class="boxes"></div>
+<div class="boxes"></div>
+
+<!--HERE PRACTICE CHANGE ATTRIBUTE-->
+<input type="text" placeholder="username">
+<input type="password" placeholder="password">
+<button id="btn-submit">Submit</button>
+
 <!--ADDED JQUERY CODE HERE-->
 <script src="js/jquery-3.6.0.min.js"></script>
 <!--SCRIPT JUST FOR PRACTICE HERE-->
@@ -98,6 +125,20 @@
     $('#box').mouseleave(function () {
         $('#box').css('background', '');
     });
+
+    //    HERE CONTINUE PRACTICE (THIS) USED FOR CHANGE ALL CLASS NAMED BOXES
+    $('.boxes').click(function () {
+        $(this).css({background: 'red'});
+    });
+
+    // HERE SELECTION ATTRIBUTE JQUERY
+    $('#btn-submit').click(function () {
+        $('[type="text"]').css({background: 'lightgreen'});
+    });
+    $('#btn-submit').click(function () {
+        $('[type="password"]').css({background: 'lightblue'});
+    });
+
 </script>
 
 </body>
