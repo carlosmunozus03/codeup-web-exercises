@@ -69,14 +69,28 @@
 
         button {
             padding: 10px;
+            margin: 10px;
         }
 
         #box2 {
             position: relative;
+            margin: 10px;
             height: 50px;
             width: 50px;
             background: darkorange;
             cursor: pointer;
+        }
+
+        .Paragraph {
+            color: red;
+            background: greenyellow;
+            padding: 20px;
+            text-align: right;
+            font-size: 20px;
+        }
+
+        #container-2 {
+            margin: 20px;
         }
     </style>
 </head>
@@ -98,9 +112,23 @@
 <input type="password" placeholder="password" value="">
 <button id="btn-submit">Submit</button>
 
+<!--ADD AND REMOVE CLASS-->
+<p>Lorem ipsum dolor sit amet.</p>
+
+<button id="button-1">Add class</button>
+<button id="button-2">Remove class</button>
+
+<!--ADD AND REMOVE CLASS WITH 1 BUTTON-->
+<button id="button-3">Toggles class</button>
+
+<!--ADD AND REMOVE CONTAIN IN HTML-->
+<div id="container-2">
+    <div id="b1">Hello</div>
+</div>
+<button id="button-4">Change Content</button>
+
 <!--ADD NEW ATTRIBUTE WITH ATTR-->
 <div id="box2"></div>
-
 <!--ADDED JQUERY CODE HERE-->
 <script src="js/jquery-3.6.0.min.js"></script>
 <!--SCRIPT JUST FOR PRACTICE HERE-->
@@ -166,8 +194,24 @@
     });
 
     //ADD ATTRIBUTE WITH ATTR RESUME SET AND GET (ATTRIBUTE NAME, ATTRIBUTE VALUE)
-    $('#box2').click(function (){
-        $(this).attr('Carlos', 'Zero')
+    $('#box2').click(function () {
+        $(this).attr('Carlos', 'Zero');
+    });
+
+    // ADD AND REMOVE CLASS
+    $('#button-1').click(function () {
+        $('p').addClass('Paragraph');
+    });
+    $('#button-2').click(function () {
+        $('p').removeClass('Paragraph');
+    });
+    $('#button-3').click(function () {
+        $('p').toggleClass('Paragraph');
+    });
+
+    //ADD AND REMOVE CONTAIN IN HTML
+    $('#button-4').click(function () {
+        $('#container-2').html('Bye');
     });
 
 </script>
