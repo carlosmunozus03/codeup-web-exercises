@@ -19,7 +19,7 @@
 </head>
 <body>
 <h1>Welcome to Mapbox</h1>
-
+<p></p>
 <!--CAN CHANGE THE HEIGHT AND WIDTH-->
 
 <div id='map' style='width: 400px; height: 300px;'></div>
@@ -57,7 +57,7 @@
         map.flyTo({
             center: [-98.48852, 29.41725],
             zoom: 15,
-            speed: 0.3
+            speed: 1
         })
     }, 1000);
 
@@ -81,7 +81,7 @@
 
     //  SHOW THE COORDINATES
     marker.on('dragend', function () {
-        $('h1').html(marker.getLngLat().toString());
+        $('p').html(marker.getLngLat().toString());
 
         //  WHEN DRAG THE MOUSE, REMOVE THE POPUP
         marker.setPopup();
