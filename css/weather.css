@@ -11,20 +11,21 @@
 /*    background: lightblue;*/
 /*}*/
 
-/*!*BODY HERE TODAY*!*/
-/*#box-today {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-content: center;*/
-/*    flex-direction: column;*/
-/*    height: 100px;*/
-/*    width: 200px;*/
-/*    background: red;*/
-/*    cursor: pointer;*/
-/*    color: cornsilk;*/
-/*    text-align: center;*/
-/*    align-items: end;*/
+/*BODY HERE TODAY*/
+#box-today {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    height: 100px;
+    width: 200px;
+    background: red;
+    cursor: pointer;
+    color: cornsilk;
+    text-align: center;
 
+}
 
 /*}*/
 /*#map {*/
@@ -44,42 +45,42 @@
 /*}*/
 
 /*!*BODY HERE WEEKDAYS*!*/
-/*.card {*/
-/*    justify-content: center;*/
-/*    align-content: center;*/
-/*    flex-direction: column;*/
-/*    display: inline-block;*/
-/*    !*position: relative;*!*/
-/*    height: 100px;*/
-/*    width: 100px;*/
-/*    cursor: pointer;*/
-/*    background: greenyellow;*/
-/*    margin: 10px;*/
-/*    text-align: center;*/
-/*}*/
+.card {
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    display: inline-block;
+    /*position: relative;*/
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    background: greenyellow;
+    margin: 10px 0;
+    text-align: center;
+}
 
 /*!*FOOTER HERE*!*/
-/*.footer-ul {*/
-/*    list-style-type: none;*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    overflow: hidden;*/
-/*    background-color: #333;*/
-/*    cursor: pointer;*/
-/*}*/
+.footer-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    cursor: pointer;
+}
 
-/*.footer-card {*/
-/*    float: left;*/
-/*    display: block;*/
-/*    color: white;*/
-/*    text-align: center;*/
-/*    padding: 14px 16px;*/
-/*    text-decoration: none;*/
-/*}*/
+.footer-card {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-/*.footer-card:hover {*/
-/*    background-color: #111;*/
-/*}*/
+.footer-card:hover {
+    background-color: #111;
+}
 
 /*!*BUTTONS PROPERTY*!*/
 /*input {*/

@@ -52,9 +52,9 @@ geocode('San Antonio', MAPBOX_ACCESS_TOKEN).then(function (results) {
 });
 
 // SHOW THE ADDRESS COORDINATES
-reverseGeocode({lng: -96.79, Lat: 32.77}, MAPBOX_ACCESS_TOKEN).then(function (results) {
-    console.log(results);
-});
+// reverseGeocode({lng: -96.79, Lat: 32.77}, MAPBOX_ACCESS_TOKEN).then(function (results) {
+//     console.log(results);
+// });
 
 // HERE ENTER THE NAME IN A BUTTON FOR LOOKING FOR THE SPECIFIC ADDRESS
 
@@ -74,11 +74,29 @@ $("#find").click(function () {
 
 
 //HERE THE WEATHER
+
+
 var coordinates = [29.4241, -98.4936];
-$.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=current,hourly,minutely&appid=" + WEATHER_MAP_TOKEN)
+$.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=hourly,minutely&appid=" + WEATHER_MAP_TOKEN)
     .done(function (resp) {
         console.log(resp);
-        var today = resp.daily[0];
-        var todayDate = new Date(today.dt * 1000);
-        console.log(todayDate);
+
+//LOOP FOR 5 DAYS
+        for (var i = 0; i < 5; i++) {
+            var today = resp.daily[i];
+            $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
+            var todayDate = new Date(today.dt * 1000);
+        }
+        //      var today = resp.daily[0];
+        // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
+        // var todayDate = new Date(today.dt * 1000);
+
+        $('#box-today').html('<div id="box-today">' + today.temp.min + ' / ' + today.temp.max + '</div>');
+        console.log(today);
+        console.log(today.temp.min);
+
+        console.log(today.temp.max);
+        console.log(today.humidity);
+        // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
+        // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
     });
