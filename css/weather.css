@@ -24,7 +24,7 @@
     cursor: pointer;
     color: cornsilk;
     text-align: center;
-
+    border: 1px solid black;
 }
 
 /*}*/
@@ -50,13 +50,14 @@
     align-content: center;
     flex-direction: column;
     display: inline-block;
-    /*position: relative;*/
-    height: 100px;
-    width: 100px;
+    position: relative;
+    height: 100%;
+    width: 150px;
     cursor: pointer;
     background: greenyellow;
-    margin: 10px 0;
+    margin: 10px 10px 10px 0;
     text-align: center;
+   border: 1px solid black;
 }
 
 /*!*FOOTER HERE*!*/

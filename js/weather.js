@@ -84,19 +84,22 @@ $.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + co
 //LOOP FOR 5 DAYS
         for (var i = 0; i < 5; i++) {
             var today = resp.daily[i];
-            $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
+            $('#section-1').append('<div class="card">' + today.temp.min + '&degF' + ' / ' + today.temp.max + '&degF' + ' <br> ' + 'Description: ' + today.weather[0].description + ' <br> ' + 'Humidity: ' + today.humidity + ' <br> ' + 'Wind: ' + today.wind_speed + ' <br> ' + 'UVI: ' + today.uvi + ' <br> ' + '</div>');
             var todayDate = new Date(today.dt * 1000);
         }
         //      var today = resp.daily[0];
         // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
         // var todayDate = new Date(today.dt * 1000);
-
-        $('#box-today').html('<div id="box-today">' + today.temp.min + ' / ' + today.temp.max + '</div>');
+//SINGLE DAY
+        $('#box-today').html('<div id="box-today">' + today.temp.min + '&degF' + ' / ' + today.temp.max + '&degF' + ' <br> ' + 'Description: ' + today.weather[0].description + ' <br> ' + 'Humidity: ' + today.humidity + ' <br> ' + 'Wind: ' + today.wind_speed + ' <br> ' + 'UVI: ' + today.uvi + ' <br> ' + '</div>');
         console.log(today);
         console.log(today.temp.min);
 
         console.log(today.temp.max);
         console.log(today.humidity);
+        console.log(today.uvi);
+        console.log(today.weather[0].description);
+        console.log(today.uvi);
         // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
         // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
     });
