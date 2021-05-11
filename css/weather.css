@@ -1,118 +1,87 @@
 
-* {
-    margin: 0;
-    padding: 10px;
-    list-style: none;
-    text-decoration: none;
-    font-family: sans-serif;
-}
+/** {*/
+/*    margin: 0;*/
+/*    padding: 10px;*/
+/*    list-style: none;*/
+/*    text-decoration: none;*/
+/*    font-family: sans-serif;*/
+/*}*/
 
-.logo {
-    height: 20vh;
-    width: 20vw;
-    border-radius: 50%;
-}
+/*h1 {*/
+/*    background: lightblue;*/
+/*}*/
 
-#box-today {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    height: 100px;
-    width: 200px;
-    background: red;
-    cursor: pointer;
-    color: cornsilk;
-    text-align: center;
-
-}
-
-.card {
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    display: inline-block;
-    /*position: relative;*/
-    height: 100px;
-    width: 100px;
-    cursor: pointer;
-    background: greenyellow;
-    margin: 20px;
-    text-align: center;
-}
-
-.footer-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    cursor: pointer;
-}
-
-.footer-card {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.footer-card:hover {
-    background-color: #111;
-}
-
-/*#container {*/
-/*    !*VERTICAL AND HORIZONTAL TEXT CENTERING USING FLEXBOX *!*/
+/*!*BODY HERE TODAY*!*/
+/*#box-today {*/
 /*    display: flex;*/
 /*    justify-content: center;*/
 /*    align-content: center;*/
 /*    flex-direction: column;*/
-/*    !*HERE START NORMAL CSS CODE*!*/
 /*    height: 100px;*/
 /*    width: 200px;*/
 /*    background: red;*/
 /*    cursor: pointer;*/
 /*    color: cornsilk;*/
 /*    text-align: center;*/
-/*    !*ADDED POSITION FOR MOVE BOX TO RIGHT IN SAME LINE*!*/
-/*    !*position: absolute;*!*/
-/*}*/
+/*    align-items: end;*/
 
-/*#box {*/
+
+/*}*/
+/*#map {*/
 /*    !*VERTICAL AND HORIZONTAL TEXT CENTERING USING FLEXBOX *!*/
 /*    display: flex;*/
 /*    float: right;*/
-/*    justify-content: center;*/
-/*    align-content: center;*/
-/*    flex-direction: column;*/
+/*    !*justify-content: center;*!*/
+/*    !*align-content: center;*!*/
+/*    !*flex-direction: column;*!*/
 /*    !*HERE START NORMAL CSS CODE*!*/
 /*    height: 100px;*/
 /*    width: 200px;*/
-/*    background: red;*/
-/*    cursor: pointer;*/
-/*    color: cornsilk;*/
-/*    text-align: center;*/
+/*    !*background: red;*!*/
+/*    !*cursor: pointer;*!*/
+/*    !*color: cornsilk;*!*/
+/*    !*text-align: center;*!*/
 /*}*/
 
-/*#buttons {*/
-/*    margin-top: 120px;*/
-/*}*/
-
-/*#btn-box {*/
-/*    margin-left: 620px;*/
-/*}*/
-
-/*.boxes {*/
-/*    position: relative;*/
+/*!*BODY HERE WEEKDAYS*!*/
+/*.card {*/
+/*    justify-content: center;*/
+/*    align-content: center;*/
+/*    flex-direction: column;*/
+/*    display: inline-block;*/
+/*    !*position: relative;*!*/
 /*    height: 100px;*/
 /*    width: 100px;*/
 /*    cursor: pointer;*/
 /*    background: greenyellow;*/
-/*    margin: 20px;*/
+/*    margin: 10px;*/
+/*    text-align: center;*/
 /*}*/
 
+/*!*FOOTER HERE*!*/
+/*.footer-ul {*/
+/*    list-style-type: none;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    overflow: hidden;*/
+/*    background-color: #333;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.footer-card {*/
+/*    float: left;*/
+/*    display: block;*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    padding: 14px 16px;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.footer-card:hover {*/
+/*    background-color: #111;*/
+/*}*/
+
+/*!*BUTTONS PROPERTY*!*/
 /*input {*/
 /*    padding: 10px;*/
 /*}*/
@@ -122,23 +91,82 @@
 /*    margin: 10px;*/
 /*}*/
 
-/*#box2 {*/
-/*    position: relative;*/
-/*    margin: 10px;*/
-/*    height: 50px;*/
-/*    width: 50px;*/
-/*    background: darkorange;*/
-/*    cursor: pointer;*/
-/*}*/
+/*!*#container {*!*/
+/*!*    !*VERTICAL AND HORIZONTAL TEXT CENTERING USING FLEXBOX *!*!*/
+/*!*    display: flex;*!*/
+/*!*    justify-content: center;*!*/
+/*!*    align-content: center;*!*/
+/*!*    flex-direction: column;*!*/
+/*!*    !*HERE START NORMAL CSS CODE*!*!*/
+/*!*    height: 100px;*!*/
+/*!*    width: 200px;*!*/
+/*!*    background: red;*!*/
+/*!*    cursor: pointer;*!*/
+/*!*    color: cornsilk;*!*/
+/*!*    text-align: center;*!*/
+/*!*    !*ADDED POSITION FOR MOVE BOX TO RIGHT IN SAME LINE*!*!*/
+/*!*    !*position: absolute;*!*!*/
+/*!*}*!*/
 
-/*.Paragraph {*/
-/*    color: red;*/
-/*    background: greenyellow;*/
-/*    padding: 20px;*/
-/*    text-align: right;*/
-/*    font-size: 20px;*/
-/*}*/
+/*!*#box {*!*/
+/*!*    !*VERTICAL AND HORIZONTAL TEXT CENTERING USING FLEXBOX *!*!*/
+/*!*    display: flex;*!*/
+/*!*    float: right;*!*/
+/*!*    justify-content: center;*!*/
+/*!*    align-content: center;*!*/
+/*!*    flex-direction: column;*!*/
+/*!*    !*HERE START NORMAL CSS CODE*!*!*/
+/*!*    height: 100px;*!*/
+/*!*    width: 200px;*!*/
+/*!*    background: red;*!*/
+/*!*    cursor: pointer;*!*/
+/*!*    color: cornsilk;*!*/
+/*!*    text-align: center;*!*/
+/*!*}*!*/
 
-/*#container-2 {*/
-/*    margin: 20px;*/
-/*}*/
+/*!*#buttons {*!*/
+/*!*    margin-top: 120px;*!*/
+/*!*}*!*/
+
+/*!*#btn-box {*!*/
+/*!*    margin-left: 620px;*!*/
+/*!*}*!*/
+
+/*!*.boxes {*!*/
+/*!*    position: relative;*!*/
+/*!*    height: 100px;*!*/
+/*!*    width: 100px;*!*/
+/*!*    cursor: pointer;*!*/
+/*!*    background: greenyellow;*!*/
+/*!*    margin: 20px;*!*/
+/*!*}*!*/
+
+/*!*input {*!*/
+/*!*    padding: 10px;*!*/
+/*!*}*!*/
+
+/*!*button {*!*/
+/*!*    padding: 10px;*!*/
+/*!*    margin: 10px;*!*/
+/*!*}*!*/
+
+/*!*#box2 {*!*/
+/*!*    position: relative;*!*/
+/*!*    margin: 10px;*!*/
+/*!*    height: 50px;*!*/
+/*!*    width: 50px;*!*/
+/*!*    background: darkorange;*!*/
+/*!*    cursor: pointer;*!*/
+/*!*}*!*/
+
+/*!*.Paragraph {*!*/
+/*!*    color: red;*!*/
+/*!*    background: greenyellow;*!*/
+/*!*    padding: 20px;*!*/
+/*!*    text-align: right;*!*/
+/*!*    font-size: 20px;*!*/
+/*!*}*!*/
+
+/*!*#container-2 {*!*/
+/*!*    margin: 20px;*!*/
+/*!*}*!*/

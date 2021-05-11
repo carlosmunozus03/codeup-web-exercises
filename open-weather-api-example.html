@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <title>OpenWeather API Playground</title>
     <link rel="stylesheet" href="css/weather.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
 </head>
 <body>
 <h1>OpenWeather API Playground</h1>
 <header>
-    <img class="logo" src="img/weather.png" alt="weather">
-    <p>Lorem ipsum dolor sit amet.</p>
+    <h3>weather today</h3>
 </header>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
 <div id="box-today">today information</div>
 <div id="buttons">
-    <button id="btn-box">button here</button>
+    <label for="input"></label>
+    <input type="text" id="input" placeholder="Place Here">
+    <button id="find">Find</button>
 </div>
 
 <!--HERE CONTINUE PRACTICE-->
@@ -21,6 +25,7 @@
 <div class="boxes"></div>
 
 <main id="container">
+    <h3>week days</h3>
     <section id="section-1">
         <div class="card">Day 1</div>
         <div class="card">Day 2</div>
@@ -35,27 +40,19 @@
         </ul>
     </section>
     <footer>
-     <ul class="footer-ul">
-         <li class="footer-card">about us</li>
-         <li class="footer-card">privacy policy</li>
-         <li class="footer-card">donate</li>
-         <li class="footer-card">weather app</li>
-     </ul>
+        <ul class="footer-ul">
+            <li class="footer-card">about us</li>
+            <li class="footer-card">privacy policy</li>
+            <li class="footer-card">donate</li>
+            <li class="footer-card">weather app</li>
+        </ul>
     </footer>
 </main>
-<!--HERE JQUERY CDN-->
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/keys.js"></script>
-<script>
-    var coordinates = [29.4241, -98.4936];
-    $.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=current,hourly,minutely&appid=" + WEATHER_MAP_TOKEN)
-        .done(function (resp) {
-            console.log(resp);
-            var today = resp.daily[0];
-            var todayDate = new Date(today.dt * 1000);
-            console.log(todayDate);
-        });
-</script>
+<script src="js/mapbox-goecoder-utils.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<script src="js/weather.js"></script>
 </body>
 </html>
