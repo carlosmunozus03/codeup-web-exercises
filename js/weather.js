@@ -36,8 +36,8 @@ var popup = new mapboxgl.Popup()
 
 //  SHOW THE COORDINATES
 marker.on('dragend', function () {
-    $('p').html(marker.getLngLat().toString());
-
+    // $('p').html(marker.getLngLat().toString());
+    getWeather([marker.getLngLat().lat, marker.getLngLat().lng]);
     //  WHEN DRAG THE MOUSE, REMOVE THE POPUP
     marker.setPopup();
 });
@@ -75,32 +75,68 @@ $("#find").click(function () {
 
 //HERE THE WEATHER
 
+var newCoordinates = geocode('San Antonio', MAPBOX_ACCESS_TOKEN).then(function (results) {
+});
+
+
+//////
 
 var coordinates = [29.4241, -98.4936];
-$.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=hourly,minutely&appid=" + WEATHER_MAP_TOKEN)
-    .done(function (resp) {
-        console.log(resp);
 
+function getWeather(coordinates) {
+    $.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=hourly,minutely&appid=" + WEATHER_MAP_TOKEN)
+        .done(function (resp) {
+            console.log(resp);
+
+            $('#section-1').html('');
 //LOOP FOR 5 DAYS
-        for (var i = 0; i < 5; i++) {
-            var today = resp.daily[i];
-            $('#section-1').append('<div class="card">' + today.temp.min + '&degF' + ' / ' + today.temp.max + '&degF' + ' <br> ' + 'Description: ' + today.weather[0].description + ' <br> ' + 'Humidity: ' + today.humidity + ' <br> ' + 'Wind: ' + today.wind_speed + ' <br> ' + 'UVI: ' + today.uvi + ' <br> ' + '</div>');
-            var todayDate = new Date(today.dt * 1000);
-        }
-        //      var today = resp.daily[0];
-        // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
-        // var todayDate = new Date(today.dt * 1000);
+            for (var i = 0; i < 5; i++) {
+                var today = resp.daily[i];
+                $('#section-1').append('<div class="card">' + '<div class="icon"><img id="wicon' + [i] + '"' +
+                    ' src="http://openweathermap.org/img/w/' + today.icon + '.png"' +
+                    ' alt="Weather icon"></div>' + '<br>' + today.temp.min + '&degF' + ' / ' + today.temp.max + '&degF' + ' <br> ' + 'Description: ' + today.weather[0].description + ' <br> ' + 'Humidity: ' + today.humidity + ' <br> ' + 'Wind: ' + today.wind_speed + ' <br> ' + 'UVI: ' + today.uvi + ' <br> ' + '</div>');
+                var iconcode = today.weather[0].icon;
+                var iconurl = 'http://openweathermap.org/img/w/' + iconcode + '.png';
+                $('#wicon' + [i]).attr('src', iconurl);
+                var todayDate = new Date(today.dt * 1000);
+            }
+            //      var today = resp.daily[0];
+            // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
+            // var todayDate = new Date(today.dt * 1000);
 
 //SINGLE DAY
-        $('#box-today').html('<div>' + today.temp.min + '&degF' + ' / ' + today.temp.max + '&degF' + ' <br> ' + 'Description: ' + today.weather[0].description + ' <br> ' + 'Humidity: ' + today.humidity + ' <br> ' + 'Wind: ' + today.wind_speed + ' <br> ' + 'UVI: ' + today.uvi + ' <br> ' + '</div>');
-        console.log(today);
-        console.log(today.temp.min);
+            today = resp.current;
+            $('#box-today').html('<div>' + '<div class="icon"><img class="wicon" src="" alt="Weather icon"></div>' + '<br>' + today.temp + '&degF' + ' <br>' +
+                ' ' + 'Description: ' + today.weather[0].description + ' <br> ' + 'Humidity: ' + today.humidity + ' <br>' +
+                ' ' + 'Wind: ' + today.wind_speed + ' <br> ' + 'UVI: ' + today.uvi + ' <br> ' + ' <br>' +
+                ' ' + '</div>');
+            console.log(today);
+            console.log(today.temp.min);
+            console.log(today.temp.max);
+            console.log(today.humidity);
+            console.log(today.uvi);
+            console.log(today.weather[0].description);
+            console.log(today.uvi);
+            console.log(today.weather[0].icon);
+            console.log(todayDate);
 
-        console.log(today.temp.max);
-        console.log(today.humidity);
-        console.log(today.uvi);
-        console.log(today.weather[0].description);
-        console.log(today.uvi);
-        // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
-        // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
-    });
+            //ADD WEATHER ICON
+            var iconcode = today.weather[0].icon;
+            var iconurl = 'http://openweathermap.org/img/w/' + iconcode + '.png';
+            $('.wicon').attr('src', iconurl);
+
+            var todayDate = new Date(today.dt * 1000);
+
+            console.log(todayDate.getDay())
+            var dayOfWeek = todayDate.getDay();
+
+            // do this IF and create the days
+
+
+            // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
+            // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
+        });
+}
+
+getWeather(coordinates);
+

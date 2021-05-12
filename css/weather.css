@@ -1,4 +1,3 @@
-
 /** {*/
 /*    margin: 0;*/
 /*    padding: 10px;*/
@@ -6,9 +5,18 @@
 /*    text-decoration: none;*/
 /*    font-family: sans-serif;*/
 /*}*/
+body {
+    margin: 10px;
+    padding: 10px;
+    background-image: url("https://www.schladming-dachstein.at/A-Z_Liste/Groebminger%20Land/Lilabunt%20%26amp%3B%20Himmelblau/himmelblau.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 h1 {
     background: lightblue;
+    border-radius: 10px;
+    text-align: center;
 }
 
 /*BODY HERE TODAY*/
@@ -25,10 +33,11 @@ h1 {
     color: cornsilk;
     text-align: center;
     border: 1px solid black;
+    border-radius: 10px;
 }
 
 
-/*#map {*/
+#map {
 /*    !*VERTICAL AND HORIZONTAL TEXT CENTERING USING FLEXBOX *!*/
 /*    display: flex;*/
 /*    float: right;*/
@@ -42,7 +51,8 @@ h1 {
 /*    !*cursor: pointer;*!*/
 /*    !*color: cornsilk;*!*/
 /*    !*text-align: center;*!*/
-/*}*/
+    border-radius: 10px;
+}
 
 /*!*BODY HERE WEEKDAYS*!*/
 .card {
@@ -57,7 +67,8 @@ h1 {
     background: greenyellow;
     margin: 10px 10px 10px 0;
     text-align: center;
-   border: 1px solid black;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 /*!*FOOTER HERE*!*/
@@ -68,6 +79,7 @@ h1 {
     overflow: hidden;
     background-color: #333;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .footer-card {
