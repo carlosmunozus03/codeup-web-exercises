@@ -90,8 +90,9 @@ $.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + co
         //      var today = resp.daily[0];
         // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
         // var todayDate = new Date(today.dt * 1000);
+
 //SINGLE DAY
-        $('#box-today').html('<div id="box-today">' + today.temp.min + '&degF' + ' / ' + today.temp.max + '&degF' + ' <br> ' + 'Description: ' + today.weather[0].description + ' <br> ' + 'Humidity: ' + today.humidity + ' <br> ' + 'Wind: ' + today.wind_speed + ' <br> ' + 'UVI: ' + today.uvi + ' <br> ' + '</div>');
+        $('#box-today').html('<div>' + today.temp.min + '&degF' + ' / ' + today.temp.max + '&degF' + ' <br> ' + 'Description: ' + today.weather[0].description + ' <br> ' + 'Humidity: ' + today.humidity + ' <br> ' + 'Wind: ' + today.wind_speed + ' <br> ' + 'UVI: ' + today.uvi + ' <br> ' + '</div>');
         console.log(today);
         console.log(today.temp.min);
 

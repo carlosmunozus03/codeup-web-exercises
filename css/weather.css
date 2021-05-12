@@ -7,9 +7,9 @@
 /*    font-family: sans-serif;*/
 /*}*/
 
-/*h1 {*/
-/*    background: lightblue;*/
-/*}*/
+h1 {
+    background: lightblue;
+}
 
 /*BODY HERE TODAY*/
 #box-today {
@@ -18,7 +18,7 @@
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    height: 100px;
+    height: 100%;
     width: 200px;
     background: red;
     cursor: pointer;
@@ -27,7 +27,7 @@
     border: 1px solid black;
 }
 
-/*}*/
+
 /*#map {*/
 /*    !*VERTICAL AND HORIZONTAL TEXT CENTERING USING FLEXBOX *!*/
 /*    display: flex;*/
@@ -52,7 +52,7 @@
     display: inline-block;
     position: relative;
     height: 100%;
-    width: 150px;
+    width: 200px;
     cursor: pointer;
     background: greenyellow;
     margin: 10px 10px 10px 0;
