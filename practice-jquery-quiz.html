@@ -30,29 +30,11 @@
             position: absolute;
         }
 
-        #box {
-            /*VERTICAL AND HORIZONTAL TEXT CENTERING USING FLEXBOX */
-            display: flex;
-            float: right;
-            justify-content: center;
-            align-content: center;
-            flex-direction: column;
-            /*HERE START NORMAL CSS CODE*/
-            height: 100px;
-            width: 200px;
-            background: red;
-            cursor: pointer;
-            color: cornsilk;
-            text-align: center;
-        }
 
         #buttons {
             margin-top: 120px;
         }
 
-        #btn-box {
-            margin-left: 620px;
-        }
 
         .boxes {
             position: relative;
@@ -92,14 +74,22 @@
         #container-2 {
             margin: 20px;
         }
+
+        #c1 {
+            padding: 10px;
+            background: lightblue;
+            height: auto;
+            width: 100%;
+            text-align: center;
+            display: none;
+        }
     </style>
 </head>
 <body>
 <div id="container">Practice</div>
-<div id="box">Practice</div>
+
 <div id="buttons">
     <button id="btn-container">Change Left</button>
-    <button id="btn-box">Change Right</button>
 </div>
 
 <!--HERE CONTINUE PRACTICE-->
@@ -129,6 +119,8 @@
 
 <!--ADD NEW ATTRIBUTE WITH ATTR-->
 <div id="box2"></div>
+<div id="c1">This box is open</div>
+<button id="button-5">Open and close box</button>
 <!--ADDED JQUERY CODE HERE-->
 <script src="js/jquery-3.6.0.min.js"></script>
 <!--SCRIPT JUST FOR PRACTICE HERE-->
@@ -214,16 +206,34 @@
         $('#container-2').html('Bye');
     });
 
-    // ADD CONTENT
-    $('').append(<div id="c2">Bye</div>);
+    // // ADD CONTENT (LIKE THE WEATHER APP)
+    $('#button-4').click(function () {
+        $('#container-2').append('<div id="c2">' + 'Bye' + '</div>');
+    });
     // ADD CONTENT BEFORE SELECTED BOX
-    $('').before(<h1>title</h1>);
-    // ADD CONTENT AFTER SELECTED BOX
-    $('').after(<h3>paragraph</h3>);
+    $('#button-4').click(function () {
+        $('#container-2').before('<h1>' + 'Title' + '</h1>');
+    });
+
+    // // ADD CONTENT AFTER SELECTED BOX
+    $('#button-4').click(function () {
+        $('#container-2').after('<h3>' + 'paragraph' + '</h3>');
+    });
+
     // ADD NEW TEXT TO ALREADY WRITTEN TEXT
-    $('').prepend('welcome');
+    $('#button-4').click(function () {
+        $('#container-2').prepend('Welcome and ');
+    });
+
     //  REPLACES WITH NEW TEXT, THE TEXT ALREADY WRITTEN
-    $('').text('welcome');
+    $('#button-4').click(function () {
+        $('#container-2').text('Have a great day ');
+    });
+
+    //   HIDDEN AND SHOW ELEMENTS WITH SPEED EFFECTS
+    $('#button-5').click(function () {
+        $('#c1').toggle('fast');
+    });
 
 </script>
 

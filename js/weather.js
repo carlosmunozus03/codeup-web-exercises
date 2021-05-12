@@ -88,9 +88,10 @@ function getWeather(coordinates) {
         .done(function (resp) {
             console.log(resp);
 
-            $('#section-1').html('');
+            // $('#section-1').html('');
 //LOOP FOR 5 DAYS
-            for (var i = 0; i < 5; i++) {
+            $('#section-1').html('');
+            for (var i = 0; i < 6; i++) {
                 var today = resp.daily[i];
                 $('#section-1').append('<div class="card">' + '<div class="icon"><img id="wicon' + [i] + '"' +
                     ' src="http://openweathermap.org/img/w/' + today.icon + '.png"' +
