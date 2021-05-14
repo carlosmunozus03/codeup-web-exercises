@@ -131,7 +131,7 @@ function getWeather(coordinates) {
             console.log(todayDate.getDay())
             var dayOfWeek = todayDate.getDay();
 
-            // do this IF and create the days
+            //Create the week days here...
 
 
             // $('#section-1').append(' <div class="card">' + today.temp.min + '</div>');
