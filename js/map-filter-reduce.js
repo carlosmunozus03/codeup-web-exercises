@@ -35,11 +35,23 @@ const users = [
         yearsOfExperience: 9
     }
 ];
+console.log(users);
+// let moreLanguages = users.filter(function (user) {
+//     return user.languages.length >= 3;
+// });
+// console.log(moreLanguages)
+//
 
-let moreLanguages = users.filter(function (user) {
-    return user.languages.length >= 3;
-});
-console.log(moreLanguages)
+let triLang = users.filter(x => x.languages.length > 2);
+console.log(triLang);
 
+// let triLang = users.filter(function (x) {
+//     return users.languages.length > 2;
+// });
 
+let newEmail = users.map(x => x.email);
+console.log(newEmail);
+
+let totalExperience = users.reduce((x, y) => x.yearsOfExperience + y.yearsOfExperience);
+console.log(totalExperience);
 
