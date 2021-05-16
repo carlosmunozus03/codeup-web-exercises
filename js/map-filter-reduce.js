@@ -42,7 +42,7 @@ console.log(users);
 // console.log(moreLanguages)
 //
 
-let triLang = users.filter(x => x.languages.length > 2);
+let triLang = users.filter(x => x.languages.length >= 3);
 console.log(triLang);
 
 // let triLang = users.filter(function (x) {
@@ -52,6 +52,6 @@ console.log(triLang);
 let newEmail = users.map(x => x.email);
 console.log(newEmail);
 
-let totalExperience = users.reduce((x, y) => x.yearsOfExperience + y.yearsOfExperience);
+let totalExperience = users.reduce((x, y) => x.yearsOfExperience + y.yearsOfExperience, 0);
 console.log(totalExperience);
 
