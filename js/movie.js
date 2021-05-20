@@ -57,3 +57,4 @@ movies.forEach((movie) => {
 line.addEventListener('mouseleave', () => {
     movies.forEach(movie => movie.classList.remove('hover'));
 });
+
