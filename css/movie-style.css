@@ -2,7 +2,6 @@
 :root {
     --color: #E50914;
     --background: #141414;
-    --nav: #AAA;
 }
 
 * {
@@ -11,6 +10,7 @@
     box-sizing: border-box;
 }
 
+/*===CHANGE BACKGROUND TO #212121===*/
 body {
     background: white;
     font-family: 'Open Sans', sans-serif;
@@ -34,40 +34,25 @@ header .container {
 header .logo {
     font-family: 'Bebas Neue', cursive;
     font-weight: normal;
-    font-size: 40px;
     color: var(--color);
+    font-size: 40px;
 }
 
 header nav a {
-    color: var(--nav);
+    color: #AAA;
     text-decoration: none;
     margin-right: 20px;
 
 }
 
+/*===CHANGE COLOR TO #FFF===*/
 header nav a:hover,
 header nav a.active {
     color: #212121;
 }
 
-/* here test cards*/
-.card {
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    display: inline-block;
-    position: relative;
-    height: 100%;
-    width: 200px;
-    cursor: pointer;
-    background: greenyellow;
-    margin: 10px 10px 10px 0;
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 10px;
-}
+/*===HERE START THE MAIN PAGE MOVIE===*/
 
-/*HERE START THE MOVIE*/
 /* 650px / 16 px = 40.62 em (convertor px to em)*/
 .principal-movie {
     font-size: 16px;
@@ -75,11 +60,12 @@ header nav a.active {
     color: #FFF;
     /*linear-gradient(rgba(0,0,0, .50) 0%,rgba(0,0,0, .50)100%),*/
     background-image: url("https://www.themoviedb.org/t/p/w1280/1UKNef590A0ZaMnxsscIcWuK1Em.jpg");
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     margin-bottom: 3.12em;
     display: flex;
     align-items: end;
+    object-position: center;
 }
 
 .principal-movie .container {
@@ -121,7 +107,107 @@ header nav a.active {
     margin-right: 1.25em;
 }
 
-/*media queries try responsive*/
+/*=== TITLE CONTAINER AND CONTROLS===*/
+.container-title-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.container-title-controls h3 {
+    color: #fff;
+    font-size: 30px;
+}
+
+.container-title-controls .indicators button {
+    background: #FFF;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+.container-title-controls .indicators button:hover,
+.container-title-controls .indicators button.active {
+    background: red;
+}
+
+
+/*=== MAIN CONTAINER AND ARROWS===*/
+
+.recommended-movies {
+    margin-bottom: 70px;
+}
+
+.recommended-movies .main-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.recommended-movies .main-container .left-arrow,
+.recommended-movies .main-container .right-arrow {
+    position: absolute;
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: #FFF;
+    z-index: 500;
+    transition: .2s ease all;
+}
+
+.recommended-movies .main-container .left-arrow:hover,
+.recommended-movies .main-container .right-arrow:hover {
+    background: rgba(0, 0, 0, .9);
+}
+
+.recommended-movies .main-container .left-arrow {
+    left: 0;
+}
+
+.recommended-movies .main-container .right-arrow {
+    right: 0;
+}
+
+/*===CAROUSEL===*/
+.recommended-movies .container-carousel {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.recommended-movies .container-carousel .carousel {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.recommended-movies .container-carousel .carousel .movies {
+    min-width: 20%;
+    transition: .3s ease all;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+}
+
+/*WORK WITH JS*/
+.recommended-movies .container-carousel .carousel .movies.hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+/*WORK WITH JS*/
+
+.recommended-movies .container-carousel .carousel .movies img {
+    width: 100%;
+    vertical-align: top;
+}
+
+
+/*===MEDIA QUERIES A LITTLE BIT RESPONSIVE===*/
 @media screen and (max-width: 800px) {
     header .logo {
         margin-bottom: 10px;
@@ -139,5 +225,21 @@ header nav a.active {
 
     .principal-movie .description {
         max-width: 100%;
+    }
+
+    .recommended-movies .container-carousel {
+        overflow: visible;
+    }
+
+    .recommended-movies .container-carousel .carousel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .recommended-movies .indicators,
+    .recommended-movies .left-arrow,
+    .recommended-movies .right-arrow {
+        display: none;
     }
 }
