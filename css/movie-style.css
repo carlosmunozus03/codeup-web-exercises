@@ -12,7 +12,7 @@
 
 /*===CHANGE BACKGROUND TO #212121===*/
 body {
-    background: white;
+    background: #212121;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -48,7 +48,7 @@ header nav a {
 /*===CHANGE COLOR TO #FFF===*/
 header nav a:hover,
 header nav a.active {
-    color: #212121;
+    color: #fff;
 }
 
 /*===HERE START THE MAIN PAGE MOVIE===*/
@@ -59,7 +59,7 @@ header nav a.active {
     min-height: 40.62em;
     color: #FFF;
     /*linear-gradient(rgba(0,0,0, .50) 0%,rgba(0,0,0, .50)100%),*/
-    background-image: url("https://www.themoviedb.org/t/p/w1280/1UKNef590A0ZaMnxsscIcWuK1Em.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0, 0, 0, .50) 100%), url("https://www.themoviedb.org/t/p/w1280/1UKNef590A0ZaMnxsscIcWuK1Em.jpg");
     background-position: center center;
     background-size: cover;
     margin-bottom: 3.12em;
