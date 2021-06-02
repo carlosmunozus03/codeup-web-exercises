@@ -40,9 +40,9 @@ $(document).ready(function () {
     //     }
     // );
 
-    // $("h1").mouseenter(function(){
-    //     $(this).toggleClass("wildIt");
-    // });
+    $("h1").mouseenter(function(){
+        $(this).toggleClass("wildIt");
+    });
 
 
     $("#font-changer").click(function () {
