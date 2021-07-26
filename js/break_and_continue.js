@@ -1,39 +1,42 @@
-'use strict';
+"use strict";
+//var oddNumber = 0;
 
-//var userNum = parseFloat(prompt('Enter a number between 1 and 50'));
-//
-//console.log("Random odd number to skip is " + userNum);
-//
-//for (var i = 1; i < 50; i++) {
-//    if (i % 2 === 0) {
-//        continue;
-//    }
-//    if (userNum === i) {
-//        console.log("Yikes! Skipping number " + userNum);
-//    }
-//    console.log('Here is a odd number: ' + i);
-//}
-var oddNumber = parseInt(prompt('Enter a number between 1 and 50'));
+// while (oddNumber !== "You're never gonna come up with this"){
+//     oddNumber = parseFloat(prompt("Please enter an odd number between 1 and 50."));
+//     if (oddNumber % 2 === 1 || (oddNumber > 0 && oddNumber < 50)) {break;}
+// }
+// while (oddNumber % 2 !== 1 || !(oddNumber > 0 && oddNumber < 50)) {
+//     oddNumber = parseFloat(prompt("Please enter an odd number between 1 and 50."));
+//     //if (oddNumber % 2 === 1 && (oddNumber > 0 && oddNumber < 50)){break;}
+// }
+
+// var oddNumber = parseInt(prompt("Give me an odd number between 1 and 50 please?"));
+var oddNumber = parseInt(prompt("Give me an odd number between 1 and 50 please?"));
+
 function isNumberEven(num) {
     return num % 2 === 0;
-    //f(num % 2 === 0) {
-    //   return true;
-    // else {
-    //   return false;
-    //
+    // if (num % 2 === 0) {
+    //     return true;
+    // } else {
+    //     return false;
+    // }
 }
+
 function isNumberInRange(num) {
     return num >= 1 && num <= 50;
 }
-while(true) {
-    if (!isNumberEven(oddNumber) && isNumberEven()) {
+
+while (true) {
+    if (!isNumberEven(oddNumber) && isNumberInRange(oddNumber)) {
         break;
     }
-    oddNumber = parseInt(prompt('Enter number 1 - 50'));
+    oddNumber = parseInt(prompt("Give me an odd number between 1 and 50 please?"));
 }
-for (var i = 1;i < 50;i += 2) {
+
+for (var i = 1; i < 50; i += 2) {
     if (i === oddNumber) {
-        console.log('skyp' + oddNumber);
+        console.log("Yikes! Skipping number: " + oddNumber);
+        continue;
     }
+    console.log(i);
 }
-// falta terminar

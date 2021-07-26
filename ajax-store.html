@@ -1,43 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf8">
     <title>Online Store</title>
-    <style>
-        th, td, p, input, h3 {
-            font: 15px 'Segoe UI';
-        }
-
-        table, th, td {
-            border: solid 1px #ddd;
-            border-collapse: collapse;
-            padding: 2px 3px;
-            text-align: center;
-        }
-
-        th {
-            font-weight: bold;
-        }
-
-        #insertProducts {
-            float: left;
-            margin: 0 .5em;
-            width: calc(25% - 1em);
-        }
-
-        #btn {
-            border: 1px solid grey;
-            color: red;
-            background: white;
-            font-weight: bold;
-            padding: 8px;
-            border-radius: 5px;
-            margin-top: 300px;
-        }
-    </style>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+
 <h1>My Tool Store</h1>
 
 <table id="products">
@@ -49,10 +17,15 @@
         <th>Categories</th>
     </tr>
     </thead>
-
     <tbody id="insertProducts"></tbody>
+    <!--  <tr>-->
+    <!--    <td>Title</td>-->
+    <!--    <td>Quantity</td>-->
+    <!--    <td>Price</td>-->
+    <!--    <td>Categories</td>-->
+    <!--  </tr>-->
 </table>
-<button id="btn">Refresh</button>
+
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
@@ -60,75 +33,24 @@
     (function () {
         "use strict";
         // TODO: Create an AJAX GET request for the file under data/inventory.json
-        $.ajax("data/inventory.json").done(function (inventory) {
-            console.log(inventory);
 
-            // TODO: Take the data from inventory.json and append it to the products table
-            //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-            //             its contents and fields
-            //       HINT: You will want to target #insertProducts for your new HTML elements
-
-
-            var html = '<table class="table table-striped">';
-            html += '<tr>';
-            $.each(inventory[0], function (index,) {
-                html += '<th>' + index + '</th>';
-            });
-            html += '</tr>';
-            $.each(inventory, function (index, value) {
-                html += '<tr>';
-                $.each(value, function (index2, value2) {
-                    html += '<td>' + value2 + '</td>';
-                });
-                html += '<tr>';
-            });
-            html += '</table>';
-            $('body').html(html);
+        $.ajax("data/inventory.json").done(function (tools, status) {
+            // alert("AJAX call completed successfully!");
+            console.log("Request status: " + status);
+            console.log(tools);
+            for (var i = 0; i < tools.length; i++) {
+                $("#insertProducts").append("<tr>");
+                $("#insertProducts").append("<td>" + tools[i].title + "</td>");
+                $("#insertProducts").append("<td>" + tools[i].quantity + "</td>");
+                $("#insertProducts").append("<td>$" + tools[i].price + "</td>");
+                $("#insertProducts").append("</tr>");
+            }
         });
 
-        // ver esto
-
-
-        // function buildStuff() {
-        //     $("#insertProducts").html("");  //target this is where it inserts into table.
-        //     $.ajax("data/inventory.json").done(function (products) {
-        //         console.log(products);
-        //         for (var j = 0; j < products.length; j++) {
-        //             var htmlStr = "<tr id='product-" + (j + 1) + "' class='products'>";
-        //             htmlStr += "<td>" + products[j].title + "</td>";
-        //             htmlStr += "<td>" + products[j].quantity + "</td>";
-        //             htmlStr += "<td>" + "$" + (products[j].price).toFixed(2) + "</td>";
-        //             htmlStr += "<td>" + products[j].categories + "</td>";
-        //             htmlStr += "</tr>";
-        //             $("#insertProducts").append(htmlStr);
-        //         }
-        //     });
-        // }
-        //
-        // $("#btn").click(buildStuff);
-        //
-        // buildStuff();
-
-        //revisar
-
-        // function buildStuff() {
-        //     $("#insertProducts").html("");
-        //     $.ajax("data/inventory.json").done(function (inventory) {
-        //         console.log(inventory);
-        //         for (var i = 0; i < inventory.length; i++) {
-        //             var htmlStr = "<div id='inventory-" + (i + 1) + "' class='inventory'>";
-        //             htmlStr += "<h3>" + inventory[i].title + "</h3>";
-        //             htmlStr += "<p>" + inventory[i].quality + " " + inventory[i].categories +inventory[i].price +
-        //                 "</p>";
-        //             htmlStr += "</div>";
-        //             $("#insertProducts").append(htmlStr);
-        //         }
-        //     });
-        // }
-        //
-        // $("#btn-click").click(buildStuff);
-        //
-        // buildStuff();
+        // TODO: Take the data from inventory.json and append it to the products table
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
     })();
 </script>
 

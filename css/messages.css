@@ -1,3 +1,14 @@
+:root {
+    --bg-success: #cff3da;
+    --text-success: #237a47;
+    --bg-info: #cddeff;
+    --text-info: #342b90;
+    --bg-warning: #fcfbc9;
+    --text-warning: #867208;
+    --bg-error: #fad3d7;
+    --text-error: #770623;
+}
+
 body, html {
     height: 100%;
     width: 100%;
@@ -5,38 +16,30 @@ body, html {
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
+
 .message {
-    width: 50%;
-    position: center;
+    margin: .5em;
+    padding: .5em;
+    border: solid lightgrey 1px;
+    border-radius: 10px;
 }
-.message-info,
-.message-success,
-.message-warning,
-.message-error {
-    margin: 10px;
-    padding: 10px;
-    border-radius: 3px;
-}
+
 .message-info {
-    color: #059;
-    background-color: #BEF;
+    background: var(--bg-info);
+    color: var(--text-info);
 }
+
 .message-success {
-    color: #270;
-    background-color: #DFF2BF;
+    background: var(--bg-success);
+    color: var(--text-success);
 }
+
 .message-warning {
-    color: #9F6000;
-    background-color: #FEEFB3;
+    background: var(--bg-warning);
+    color: var(--text-warning)
 }
+
 .message-error {
-    color: #D8000C;
-    background-color: #FFBABA;
-}
-body {
-    display: grid;
-    place-items: center;
-    padding: 10px;
-    grid-auto-rows: 40px;
-    margin-top: 10%;
+    background: var(--bg-error);
+    color: var(--text-error);
 }

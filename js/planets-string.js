@@ -39,6 +39,6 @@
     // Adding planetsList string to HTML document
 
     // document.getElementById('planets').innerHTML = brPlanets;
-    // document.getElementById('planets').innerHTML = planetsList;
+    document.getElementById('planets').innerHTML = planetsList;
 
 })();

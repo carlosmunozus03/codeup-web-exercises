@@ -2,109 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mapbox API exercise</title>
-    <!--MAPBOX TAGS HERE-->
-
+    <title>Mapbox API</title>
+    <!-- MAPBOX TAGS   -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
+    <!---->
+
     <style>
         .popup-font {
-            font-family: Roboto, sans-serif;
+            font-family: Chalkboard, sans-serif;
         }
-
-        .font {
-            font-family: 'Xanh Mono', monospace;
-        }
-
     </style>
 </head>
 <body>
-<h1>Welcome to Mapbox</h1>
-<!--CAN CHANGE THE HEIGHT AND WIDTH-->
-<div id='map' style='width: 400px; height: 300px;'></div>
+<h1>Welcome to MapBox!</h1>
 
-<!--HERE BUTTON FOR LOOKING FOR THE ADDRESS-->
+<div id='map' style='width: 600px; height: 500px;'></div>
 
-<label for="input">Type an address:</label>
-<input type="text" id="input">
-<button id="btn">Click me to move someplace!</button>
 
-<!--HERE THE KEYS.JS-->
 <script src="js/keys.js"></script>
-<!--HERE THE JQUERY FOR WORK THE LOCATION WHEN PRESS A BUTTON-->
-<script src="js/jquery-3.6.0.min.js"></script>
-<!--HERE THE GEOCODER FOR SHOW EXAMPLES-->
-<script src="js/mapbox-goecoder-utils.js"></script>
-<!--MOVE THE API HERE-->
-
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
-
-<!--START CODING HERE-->
-
 <script>
+
+    // Instantiation of Map Object
     mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
     var map = new mapboxgl.Map({
         container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-98.4916, 29.4252], // starting position [lng, lat]
-        zoom: 9 // starting zoom
     });
 
-    map.setStyle('mapbox://styles/mapbox/navigation-guidance-day-v4'); // CHANGE THE STYLE URL
-    map.setZoom(12); // CHANGE THE STARTING ZOOM
-    map.setCenter([-98.4683, 29.5312]); // CHANGE THE POSITION [LNG, LAT]
+    map.setStyle('mapbox://styles/mapbox/dark-v10')
+    map.setZoom(9)
+    map.setCenter([-98.4916, 29.4252])
 
     console.log(map.getCenter());
 
-    // MARKET OBJECTS SET OPTIONS
+    map.addControl(new mapboxgl.NavigationControl());
+
+    // Instantiation of Marker Object
+
     var marker = new mapboxgl.Marker({
-        color: "red",
-    }).setLngLat([-98.4683, 29.5312])
-        .addTo(map)
-        .setDraggable(true);
+        color: 'red',
+    })
+        .setLngLat([-98.4861, 29.4260])
+        .setDraggable(true)
+        .addTo(map);
 
-    //  ADD A ALERT WITH A COMMENT
     marker.on('dragend', function () {
-        alert('the market has been moved')
-    });
+        alert(marker.getLngLat().toString())
+    })
 
-    // INSTANTIATION OF POPUPS OBJECT
+    // Instantiation of Popup object
 
     var popup = new mapboxgl.Popup()
         .setLngLat(marker.getLngLat())
-        .setHTML("<h3>You are Here!</h3>")
-        .setMaxWidth("100")
+        .setHTML("<h3>The Alamo!</h3>")
+        .setMaxWidth("100px")
         .addTo(map);
 
-    // YOU CAN DO THIS TOO
+    console.log(popup)
+
     marker.setPopup(popup);
-    popup.addClassName('popup-font')
+    popup.addClassName('popup-font');
 
-    // SHOW THE COORDINATES WHEN YOU PASS AN ADDRESS
-    geocode('San Antonio', MAPBOX_ACCESS_TOKEN).then(function (results) {
+
+    geocode("600 Navarro St #600, San Antonio, TX 78205", MAPBOX_ACCESS_TOKEN).then(function (results) {
         console.log(results);
-    });
+    })
 
-    // SHOW THE ADDRESS COORDINATES
-    reverseGeocode({lng: -96.79, Lat: 32.77}, MAPBOX_ACCESS_TOKEN).then(function (results) {
+
+    reverseGeocode({lng: -98.489598, lat: 29.426808}, MAPBOX_ACCESS_TOKEN).then(function (results) {
         console.log(results);
-    });
+    })
 
-    // HERE ENTER THE NAME IN A BUTTON FOR LOOKING FOR THE SPECIFIC ADDRESS
 
-    $("#btn").click(function () {
-        var userInput = $("#input").val();
-        geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
-            console.log(info);
-            var newCenter = {
-                lng: info[0],
-                lat: info[1]
-            };
-            marker.setLngLat(newCenter);
-            popup.setHTML('<h3 class="font">' + userInput + '</h3>');
-            map.flyTo({center: newCenter});
-        });
-    });
 </script>
-
 </body>
 </html>

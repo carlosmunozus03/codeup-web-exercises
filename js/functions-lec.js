@@ -1,54 +1,57 @@
 "use strict";
+// Immediately Invoked Function Expression (IFFE's)
+(function () {
+    console.log("Hello World.");
 
-//inmediately invoke function expression (IFEE's)
-(function() {
-    console.log('Hello word');
+    console.log(parseInt("17 dogs."));
 
-    console.log(parseInt('17 dors.'));
-    var whatIsTheWord = prompt('What is toy favorite, work appropiate word?');
-    console.log(whatIsTheWord);
+// var whatIsTheWord = prompt("What is your favorite, work appropriate, word?");
+//
+// console.log(whatIsTheWord);
 
-// let's define a function
-    function doTheThin(input) {
-        var ouput = input + " was pulled into the function. Now it is this concatenated string.";
-        return ouput;
+// Let's define a function
+    function doTheThing(input) {
+        var output = input + " was pulled into the function. Now it is this concatenated string. :)";
+        return output;
     }
 
-    console.log(doTheThin("hot Dog"));
+    console.log(doTheThing("Hot dog"));
 
     function addStuff(x, y) {
         return x + y;
     }
 
-    console.log(addStuff(15, 32));
+    console.log(addStuff(17, 18));
 
-// let's make "BAD function
+// Let's make a "bad" function...
     function logToConsole(info) {
         return console.log(info + " is something important to keep in mind.");
     }
 
-    var needThisForLater = logToConsole('bengal tigers are undangered');
+    var needThisForLater = logToConsole("Bengal tigers are endangered");
+
     console.log(needThisForLater);
 
-// In defense od console.logging during functions
+// In defense of console.logging during functions
     function addingToString(string) {
-        var finalString = string + ' is a string.'
+        var finalString = string + " is a string."
         // console.log(typeof finalString)
-        finalString += ' And if it was not originally a string it sure is now';
+        finalString += " And if it wasn't originally a string it sure is now!";
         // console.log(finalString)
         return finalString;
     }
 
-    alert(addingToString('antelope'));
+    alert(addingToString("Antelope"));
 
 // Global vs Local Variables
 
-    var global = 'Earth';
-    var local = 'Geoff';
+    var global = "Earth"
+    var local = "Geoff";
+
     console.log(global);
 
     function getGlobalAndLogIt() {
-        var local = 'Neptune';
+        var local = "Neptune";
         console.log(global);
         console.log(local);
     }
@@ -57,13 +60,12 @@
     console.log(local);
 
 // Another way to define functions
-
     var coolGuyFunction = function (string) {
         return string + ", but with sunglasses. B)";
     }
 
-    console.log(coolGuyFunction('skunk'));
+    console.log(coolGuyFunction("Skunk"));
 })();
 
-console.log(coolGuyFunction('David Stephens'));
-
+// This won't work...
+// console.log(coolGuyFunction("David Stephens"));

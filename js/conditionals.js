@@ -20,23 +20,19 @@
  * console.logging the function's return value
  */
 
+// function analyzeColor(color) {
+//     if(color === "blue") {
+//         return color + " is the color of the sky.";
+//     } else if(color === "red") {
+//         return  color + ", strawberries are red.";
+//     } else {
+//         return "I don't know anything about " + color + ".";
+//     }
+// };
 
-function analyzeColor(color) {
-    var colorC = color.toLowerCase();
-    if (colorC === 'blue') {
-        return color + ' is the color of the sky';
-    } else if (colorC === 'red') {
-        return 'Strawberries are ' + color;
-    } else if (colorC === 'cyan') {
-        return 'IDK anything about ' + color;
-    } else {
-        return ('IDK nothing about that color, im sorry');
-    }
-}
-console.log(analyzeColor('blue'));
-console.log(analyzeColor('red'));
-console.log(analyzeColor('cyan'));
-console.log(analyzeColor('pink'));
+// console.log(analyzeColor("royal blue"));
+
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -50,26 +46,29 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-console.log(randomColor);
-console.log(analyzeColor(randomColor));
+// console.log(analyzeColor(randomColor));
+
+
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
-switch (randomColor) {
-    case 'blue':
-        console.log('blue is the color of the sky');
-        break;
-    case 'red':
-        console.log('Strawberries are red');
-        break;
-    case 'cyan':
-        console.log("I don't know anything about cyan");
-        break;
-    default:
-        console.log('IDK nothing about that color');
-        break;
+
+function analyzeColor(color) {
+    switch (color) {
+        case "blue":
+            return color + " is the color of the sky.";
+            break;
+        case "red":
+            return color + ", strawberries are red.";
+            break;
+        default:
+            return "I don't know anything about " + color;
+    }
 }
+
+// console.log(analyzeColor(randomColor));
+
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -77,9 +76,10 @@ switch (randomColor) {
  * function to show it to the user.
  */
 
-var askColor = prompt('what is you favorite color').toLowerCase();
-console.log(analyzeColor(askColor));
-alert(analyzeColor(askColor));
+
+// var userInput = prompt("What is your favorite colour?").toLowerCase();
+//
+// alert(analyzeColor(userInput));
 
 /* ########################################################################## */
 
@@ -102,35 +102,38 @@ alert(analyzeColor(askColor));
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-function calculateTotal(x,y) {
 
+// 0 = No discount
+// 1 = 10%
+// 2 = 25%
+// 3 = 35%
+// 4 = 50%
+// 5 = FREE
 
-    if (x === 0) {
-        var noDiscount = (y * 1);
-        return"Bad Luck buddy, you haven't discount, that's mean total amount is: $" + noDiscount + '.';
-    } else if (x === 1) {
-        var tenOff = (y * 0.1);
-        return 'You have '+ tenOff + "% off in you total amount, that's mean you pay $" + (y - tenOff) + '.';
-    }else if (x === 2) {
-        var twentyFive = (y * 0.25);
-        return 'You have '+ twentyFive + "% off in you total amount, that's mean you pay $" + (y - twentyFive) + '.';
-    }else if (x === 3) {
-        var thirtyFive = (y * 0.35);
-        return 'You have '+ thirtyFive + "% off in you total amount, that's mean you pay $" + (y - thirtyFive) + '.';
-    }else if (x === 4) {
-        var fifty = (y * 0.5);
-        return 'You have '+ fifty + "% off in you total amount, that's mean you pay $" + (y - fifty) + '.';
+function calculateTotal(luckyNum, totalAmt) {
+    if (luckyNum === 1) {
+        return "Congratulations, your lucky number is " + luckyNum + ", you qualify for a 10% discount. Your total is: " + (totalAmt - (totalAmt * .1)).toFixed(2);
+    } else if (luckyNum === 2) {
+        return "Congratulations, your lucky number is " + luckyNum + ", you qualify for a 25% discount. Your total is: " + (totalAmt - (totalAmt * .25)).toFixed(2);
+    } else if (luckyNum === 3) {
+        return "Congratulations, your lucky number is " + luckyNum + ", you qualify for a 35% discount. Your total is: " + (totalAmt - (totalAmt * .35)).toFixed(2);
+    } else if (luckyNum === 4) {
+        return "Congratulations, your lucky number is " + luckyNum + ", you qualify for a 50% discount. Your total is: " + (totalAmt - (totalAmt * .5)).toFixed(2);
+    } else if (luckyNum === 5) {
+        return "Congratulations, your lucky number is " + luckyNum + ", you qualify for a 100% discount. It's just FREE!";
     } else {
-        var oneHundred = (y - y);
-        return "You have 100% off in you total amount, that's mean you pay $" + oneHundred + '.';
+        return "We're sorry, your lucky number is " + luckyNum + " and does not qualify for a discount." + "Your total is: " + totalAmt;
     }
 }
-console.log(calculateTotal(0, 100));
-console.log(calculateTotal(1, 100));
-console.log(calculateTotal(2, 100));
-console.log(calculateTotal(3, 100));
-console.log(calculateTotal(4, 100));
-console.log(calculateTotal(5, 100));
+
+// console.log(calculateTotal(1, 12));
+// console.log(calculateTotal(2, 12));
+// console.log(calculateTotal(3, 12));
+// console.log(calculateTotal(4, 12));
+// console.log(calculateTotal(5, 12));
+// console.log(calculateTotal(0, 12));
+// console.log(calculateTotal(6, 12));
+
 
 /**
  * TODO:
@@ -139,13 +142,13 @@ console.log(calculateTotal(5, 100));
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-
-//Generate a random number between 0 and 6
+// Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
 
-var totalBill = parseFloat(prompt('What is your total bill?'));
-alert("Your lucky number is: " + luckyNumber);
-alert(calculateTotal(luckyNumber,totalBill));
+// var userTotal = parseFloat(prompt("What is your total amount?"));
+//
+// alert("Your lucky number is " + luckyNumber);
+// alert(calculateTotal(luckyNumber, userTotal));
 
 
 /**
@@ -165,55 +168,53 @@ alert(calculateTotal(luckyNumber,totalBill));
  * HINT: The way we prompt for a value could be improved
  */
 
-var askNumber = confirm('would you like enter a number?');
+var participate = confirm("Would you like to enter a number?");
 
-if (askNumber) {
-    var userNumber = parseFloat(prompt('please enter a number'));
-    if (isNaN(userNumber)) {
-        alert(userNumber + ' is not a number, try again');
-    } else {
-        if (userNumber % 2 === 0) {
-            alert('you number es Even');
-        } else {
-            alert('you number es Odd');
-        }
-        if (userNumber > 0) {
-            alert('you number es positive');
-        } else {
-            alert('you number es negative');
-        }
-        alert(userNumber + 100 + ' This is you number would be when i add 100 to it');
-    }
-} else {
-    alert('Fine then have a good day');
+// if (participate) {
+//     var userNumber =  parseFloat(prompt("Please enter a number"));
+//     if (isNaN(userNumber)) {
+//         alert("Sorry that is not a number.");
+//     } else {
+//         if (userNumber % 2 === 0) {
+//             alert("Your number is even!");
+//         } else {
+//             alert("Your number is odd!");
+//         }
+//         if (userNumber > 0) {
+//             alert("Your number is a positive one!");
+//         } else {
+//             alert("Your number is a negative one!");
+//         }
+//         alert(userNumber + 100 + " this is what your number would be when I add 100 to it.");
+//     }
+// } else {
+//     alert("Fine then, bye.");
+// }
+
+var numberEntry;
+
+function isOddOrEven(numberEntry) {
+    return (numberEntry % 2 === 0) ? "This number is even." : "This number is odd.";
 }
 
-// Another way for do this:
+function isNegativeOrPostive(numberEntry) {
+    return (numberEntry > 0) ? "This number is positive." : "This number is negative";
+}
 
-//var numberEntry;
-//
-//function isOddOrEven (numberEntry) {
-//    return (numberEntry % 2 === 0) ? "This number is even." : "This number is odd.";
-//}
-//
-//function isNegativeOrPositive(numberEntry) {
-//    return (numberEntry > 0) ? "This number is positive." : "This number is negative";
-//}
-//
-//function plus100 (numberEntry) {
-//    return "Your number is " + (parseFloat(numberEntry) + 100) + " if we added 100."
-//}
-//
-//if(participate) {
-//    numberEntry = prompt("Please enter a number.")
-//    if (isNaN(numberEntry)) {
-//        alert("Sorry, what you entered is not a number.");
-//    } else {
-//        alert(isOddOrEven(numberEntry));
-//        alert(isNegativeOrPositive(numberEntry));
-//        alert(plus100(numberEntry));
-//
-//    }
-//} else {
-//    alert("Fine, bye!")
-//}
+function plus100(numberEntry) {
+    return "Your number is " + (parseFloat(numberEntry) + 100) + " if we added 100."
+}
+
+if (participate) {
+    numberEntry = prompt("Please enter a number.")
+    if (isNaN(numberEntry)) {
+        alert("Sorry, what you entered is not a number.");
+    } else {
+        alert(isOddOrEven(numberEntry));
+        alert(isNegativeOrPostive(numberEntry));
+        alert(plus100(numberEntry));
+
+    }
+} else {
+    alert("Fine, bye!")
+}

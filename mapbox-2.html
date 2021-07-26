@@ -2,140 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mapbox API exercise</title>
-
-    <!--MAPBOX TAGS HERE-->
-
+    <title>Mini-Exercise #2</title>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap" rel="stylesheet">
+    <style>
+        .font {
+            font-family: 'Xanh Mono', monospace;
+        }
+    </style>
 
 </head>
 <body>
-<h1>Mapbox Exercise 2</h1>
-<!--CAN CHANGE THE HEIGHT AND WIDTH-->
-<div id='map' style='width: 400px; height: 300px;'></div>
+<h1></h1>
+<div id='map' style='width: 600px; height: 500px;'></div>
+<label for="input">Type an address:</label>
+<input type="text" id="input">
+<button id="btn">Click me to move someplace!</button>
 
 <script src="js/keys.js"></script>
-
-<!--MOVE THE API HERE-->
-
+<script src="js/jquery-3.6.0.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
-<script src="js/jquery-3.6.0.min.js"></script>
-
-<!--START CODING HERE-->
-
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script>
-
-    // mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
-    // var map = new mapboxgl.Map({
-    //   container: 'map', // container ID
-    //   style: 'mapbox://styles/mapbox/streets-v11', // style URL
-    //   center: [-98.4683, 29.5312], // starting position [lng, lat]
-    //   zoom: 12 // starting zoom
-    // });
-    //
-    // setTimeout(function () {
-    //   map.flyTo({
-    //     center: [-97.0403, 32.8998],
-    //     zoom: 12,
-    //     speed: 1,
-    //   })
-    // }, 10000);
-    //
-    // $('#zoom').click(function () {
-    //   map.setZoom(map.getZoom() + 1)
-    // });
-    //
-    // //ADD NAVIGATION CONTROLS
-    // map.addControl(new mapboxgl.NavigationControl());
-    //
-
-    // // MARKER OBJECTS
-    //
-    // // var marker = new mapboxgl.Marker()
-    // //     .setLngLat([-97.0403, 32.8998])
-    // //     .addTo(map);
-    //
-    //
-    // // MARKET OBJECTS SET OPTIONS
-    // var marker = new mapboxgl.Marker({
-    //     color: "red",
-    // }).setLngLat([-98.4683, 29.5312])
-    //     .addTo(map)
-    //     .setDraggable(true)
-    //
-    // //  ADD A ALERT WITH A COMMENT
-    // marker.on('dragend', function () {
-    //     alert('the market has been moved')
-    // });
-    //
-    // // INSTANTIATION OF POPUPS OBJECT
-    //
-    // var popup = new mapboxgl.Popup()
-    //     .setLngLat(marker.getLngLat())
-    //     .setHTML("<h3>You are Here!</h3>")
-    //     .setMaxWidth("100")
-    //     .addTo(map);
-    //
-    //
-    // // YOU CAN DO THIS TOO
-    // marker.setPopup(popup);
-
-
     // Mini Exercise 2
     // TODO: Create an HTML file called mapbox-2.html. In this file, create a map centered
     // TODO: on New York with a marker on the Statue of Liberty. Add a popup to the Statue of
     // TODO: Liberty marker with the text "Statue of Liberty".
     // *BONUS - when the marker is dragged and released, display the coordinates in an H1.
-    // New York = [-74.2179, 43.2994]
-    // Statue of Liberty = [-74.0445, 40.6892]
-
-    // start the exercise here!
 
     mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
     var map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: [-74.2179, 43.2994], // starting position [lng, lat]
-        zoom: 3 // starting zoom
+        zoom: 5 // starting zoom
     });
 
-    // ADD MOVEMENT FROM NY TO STATUE OF LIBERTY
-    setTimeout(function () {
-        map.flyTo({
-            center: [-74.0445, 40.6892],
-            zoom: 15,
-            speed: 1,
-        })
-    }, 1000);
-
-    // MARKET OBJECTS SET OPTIONS
     var marker = new mapboxgl.Marker({
-        color: "red",
+        color: 'red'
     })
         .setLngLat([-74.0445, 40.6892])
-        .addTo(map)
-        .setDraggable(true); // CAN MOVE THE MARKER
-
-    // INSTANTIATION OF POPUPS OBJECT
-    var popup = new mapboxgl.Popup()
-        .setLngLat(marker.getLngLat())
-        .setHTML("<h3>Statue of Liberty</h3>")
-        .setMaxWidth("100")
         .addTo(map);
 
-    // MOVE THE TEXT ABOVE THE MARKER
+    var popup = new mapboxgl.Popup()
+        .setLngLat(marker.getLngLat())
+        .setHTML('<h3 class="font">Statue of Liberty</h3>')
+        .addTo(map);
+
     marker.setPopup(popup);
 
-    //  SHOW THE COORDINATES
-    marker.on('dragend', function () {
-        $('h1').html(marker.getLngLat().toString());
+    marker.setDraggable(true);
 
-        //  WHEN DRAG THE MOUSE, REMOVE THE POPUP
+    marker.on('dragend', function () {
+        $('h1').html(marker.getLngLat().toString())
         marker.setPopup();
+    })
+
+    $("#btn").click(function () {
+        var userInput = $("#input").val();
+        geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
+            console.log(info);
+            var newCenter = {
+                lng: info[0],
+                lat: info[1]
+            };
+            marker.setLngLat(newCenter);
+            popup.setHTML('<h3 class="font">' + userInput + '</h3>');
+            map.flyTo({center: newCenter});
+        });
     });
 
-
 </script>
-
 </body>
 </html>

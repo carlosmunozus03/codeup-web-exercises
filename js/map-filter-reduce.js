@@ -1,248 +1,280 @@
-const users = [
+// array iteration methods
+
+// .forEach()
+// let output = "";
+// let prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+
+// prices.forEach(function (item, index){
+//     output = output + "<p>" + item + " is at index " + index + "</p>";
+//     $("#output").html(output);
+// });
+
+// prices.forEach(function(price, index){
+//     let tax = (price * 0.0825).toFixed(2);
+//     let total = (parseFloat(price) + parseFloat(tax)).toFixed(2);
+//     output = output + "<p>Item number " + (index + 1) + ". Price: $" + price + ". Tax: $" + tax + ". Total: $" + total + "</p>";
+//     $("#output").html(output);
+// });
+
+// prices.forEach(function(price, index){
+//     let tax = (price * 0.0825).toFixed(2);
+//     let total = (parseFloat(price) + parseFloat(tax)).toFixed(2);
+//     output += `<p>Item number ${index+1}. Price: $${price}. Tax: $${tax}. Total $${total}</p>`;
+//     $("#output").html(output);
+// });
+
+// .map()
+
+// let output = "";
+// let prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+// let pricesAfterTax = [];
+
+// pricesAfterTax = prices.map(function(price){
+//     let tax = (price * 0.0825).toFixed(2);
+//     let total = (parseFloat(price) + parseFloat(tax)).toFixed(2);
+//     return parseFloat(total);
+// });
+//
+// pricesAfterTax.forEach(function(item){
+//     output = output + "<p>" + item + "</p>";
+//     $("#output").html(output);
+// });
+
+// let things = ["book", "pencil", "marker", "eraser"];
+// ES5
+// let pluralThings = things.map(function(thing, index){
+//    thing = thing + 's';
+//     if (index === 0) {
+//         output = "<p>You must bring the following items:</p>";
+//         output = output + "<p>" + thing + "</p>";
+//     }
+//     output = output + "<p>" + thing + "</p>";
+//     $("#output").html(output);
+//     return thing;
+// });
+
+// ES5
+// pluralThings.forEach(function(thing, index){
+//     if (index === 0) {
+//         output = "<p>You must bring the following items:</p>";
+//         output = output + "<p>" + thing + "</p>";
+//     }
+//     output = output + "<p>" + thing + "</p>";
+//     $("#output").html(output);
+// });
+// ES6
+// let things = ["book", "pencil", "marker", "eraser"];
+// let pluralThings = things.map((thing, index) => {
+//     if (index === 0) {
+//         output = "<p>You must bring the following items:</p>";
+//     }
+//     output += `<p>${thing}s</p>`;
+//     $("#output").html(output);
+// });
+
+// const cars = [
+//     {
+//         make: "Honda",
+//         model: "Civic",
+//         mileage: 10428
+//     },
+//     {
+//         make: "Toyota",
+//         model: "Corolla",
+//         mileage: 9425
+//     },
+//     {
+//         make: "Ford",
+//         model: "Mustang",
+//         mileage: 2567
+//     },
+//     {
+//         make: "Audi",
+//         model: "A3",
+//         mileage: 14500
+//     },
+//     {
+//         make: "Mazda",
+//         model: "3",
+//         mileage: 11248
+//     }
+// ];
+
+// ES5
+// var mileages = cars.map(function(car){
+//         return car.mileage;
+// });
+
+// ES6
+// const mileages = cars.map((car) => car.mileage);
+//
+// mileages.forEach(function(mileage){
+//     output = output + "<p>" + mileage + "</p>";
+//     $("#output").html(output);
+// });
+
+// .filter()
+
+// const under10K = cars.filter(function(car){
+//     return car.mileage < 10000;
+// });
+//
+// under10K.forEach(function(car){
+//     output = output + "<p>I found a " + car.make + " " + car.model + " with " + car.mileage + " miles.</p>";
+//     $("#output").html(output);
+// });
+
+let output = "";
+let prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+
+var affordablesWithTax = prices.filter(function (price) {
+    return price < 10;
+}).map(function (price) {
+    let tax = (price * 0.0825).toFixed(2);
+    let total = (parseFloat(price) + parseFloat(tax)).toFixed(2);
+    return parseFloat(total);
+});
+
+affordablesWithTax.forEach(function (itemPrice) {
+    output = output + "<p>" + itemPrice + "</p>";
+    $("#output").html(output);
+});
+
+// reduce()
+// reduce takes an accumulator parameter
+let totalCost = affordablesWithTax.reduce(function (total, itemPrice, index) {
+    console.log(`The index is: ${index}, the total is: ${total}, the itemPrice is: ${itemPrice}`);
+    return total + itemPrice;
+});
+console.log(totalCost);
+
+// we pass an array parameter into the reduce method's function
+let averagePrice = affordablesWithTax.reduce(function (total, itemPrice, index, array) {
+    // on each iteration, we add the itemPrice to the total
+    total = total + itemPrice;
+    // if it's our last iteration, we take our total that we just
+    // calculated and we divide it by the total items in the array
+    if (index === array.length - 1) {
+        return total / array.length;
+        // every other iteration through the array, we just
+        // pass it the total
+    } else {
+        return total;
+    }
+});
+
+console.log(averagePrice.toFixed(2));
+
+totalCost = prices.reduce(function (total, price, index) {
+    console.log(`The index is: ${index}, the total is: ${total.toFixed(2)}, the itemPrice is: ${price}`);
+    return total + price;
+}, 158.76);
+
+console.log(totalCost.toFixed(2));
+
+const aesopAnimals = ["Ant", "Grasshopper", "Ape", "Fox", "Donkey", "Donkey", "Donkey", "Lion", "Fly", "Bear", "Beaver", "Blackbird", "Wolf", "Bull", "Lion", "Cat", "Mouse", "Crab", "Fox", "Rooster", "Rooster", "Dog", "Fox", "Crow", "Crow", "Sheep", "Crow", "Snake", "Deer", "Dog", "Dog", "Sheep", "Dog", "Wolf", "Dog", "Lion", "Dove", "Ant", "Eagle", "Fox", "Eagle", "Stork", "Viper", "Fish", "Fly", "Ant", "Fly", "Snake", "Fox", "Crow", "Fox", "Fox", "Lion", "Fox", "Fox", "Lion", "Fox", "Stork", "Fox", "Weasel", "Fox", "Fly", "Hedgehog", "Hare", "Frog", "Fox", "Frog", "Mouse", "Frog", "Ox", "Frog", "Frog", "Goat", "Goose", "Hare", "Horse", "Donkey", "Horse", "Kite", "Dove", "Lion", "Lion", "Lion", "Lion", "Bear", "Fox", "Lion", "Boar", "Vulture", "Dog", "Mouse", "Oyster", "Donkey", "Ox", "Kite", "Snake", "Crab", "Snake", "Snake", "Tortoise", "Tortoise", "Hare", "Cat", "Wolf", "Wolf", "Lamb", "Swallow", "Tortoise"];
+
+let aesopsAnimalsCounted = aesopAnimals.reduce(function (total, animal) {
+    // total begins as an empty object
+    // the animal parameter represents each item in the array, as it is passed to the reduce function iterating through that array. So on its first pass, animal = "Ant", then "Grasshopper", etc.
+    // Since "total" is an empty object, on the first pass, this code sets a key called Ant, and its value is 1
+    //{ Ant: 1 }
+    // Grasshopper: 1
+    // Ape: 1
+    if (!total[animal]) {
+        total[animal] = 1;
+    } else {
+        total[animal] = total[animal] + 1;
+    }
+    return total;
+}, {});
+
+console.log(aesopsAnimalsCounted);
+
+const aesopsAnimalsCountedAndSorted = Object.entries(aesopsAnimalsCounted).sort(function (a, b) {
+    return b[1] - a[1]
+});
+
+for (let i = 0; i < aesopsAnimalsCountedAndSorted.length; i++) {
+    $("#output").append(
+        aesopsAnimalsCountedAndSorted[i][0] + ": " + aesopsAnimalsCountedAndSorted[i][1] + "<br>"
+    );
+}
+
+const cars = [
     {
-        id: 1,
-        name: 'ryan',
-        email: 'ryan@codeup.com',
-        languages: ['clojure', 'javascript'],
-        yearsOfExperience: 5
+        make: "Honda",
+        model: "Civic",
+        mileage: 10428
     },
     {
-        id: 2,
-        name: 'luis',
-        email: 'luis@codeup.com',
-        languages: ['java', 'scala', 'php'],
-        yearsOfExperience: 6
+        make: "Toyota",
+        model: "Corolla",
+        mileage: 9425
     },
     {
-        id: 3,
-        name: 'zach',
-        email: 'zach@codeup.com',
-        languages: ['javascript', 'bash'],
-        yearsOfExperience: 7
+        make: "Ford",
+        model: "Mustang",
+        mileage: 2567
     },
     {
-        id: 4,
-        name: 'fernando',
-        email: 'fernando@codeup.com',
-        languages: ['java', 'php', 'sql'],
-        yearsOfExperience: 8
+        make: "Audi",
+        model: "A3",
+        mileage: 14500
     },
     {
-        id: 5,
-        name: 'justin',
-        email: 'justin@codeup.com',
-        languages: ['html', 'css', 'javascript', 'php'],
-        yearsOfExperience: 9
+        make: "Mazda",
+        model: "3",
+        mileage: 11248
     }
 ];
-console.log(users);
-// 2.-Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
 
-let triLang = users.filter(x => x.languages.length >= 3);
-console.log(triLang);
-
-// 3.-Use .map to create an array of strings where each element is a user's email address
-let newEmail = users.map(x => x.email);
-console.log(newEmail);
-
-//4.- Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
-let experience = users.map(x => x.yearsOfExperience);
-console.log(experience);
-
-let totalExperience = experience.reduce((x, y) => x + y, 0);
-console.log(totalExperience);
-
-// other way
-let totalYears = users.reduce((a, b) => a + b.yearsOfExperience, 0);
-console.log(totalYears)
-
-//5.- Use .reduce to get the longest email from the list of users.
-
-// let longEmail = Math.max(...users.map(x => x.email.length));
-// console.log(longEmail);
-//
-// let names = users.map(x => x.name);
-// console.log(names);
-//
-// let nameList = names.reduce((x, y) => x + y, [].toString());
-// console.log(nameList);
-
-var longest = users.reduce(function (a, b) {
-    return a.email.length > b.email.length ? a : b;
-}).email;
-console.log(longest);
-
-let longestUserEmail = users.reduce((a, b) => {
-    return a.length > b.email.length ? a : b.email;
-});
-console.log(longestUserEmail);
-
-//6.-
-//first
-let names = users.reduce((a, b) => {
-    a.push(b.name);
-    return a;
+const mileages = cars.reduce(function (accumulator, car) {
+    accumulator.push(car.mileage);
+    return accumulator;
 }, []);
-console.log(names);
 
-//second
-let usersString = users.reduce((a, b, c) => {
-    return c === 0 ? b.name : a + ", " + b.name;
-}, "");
-console.log("The instructors are: " + usersString);
+console.log(mileages);
 
-//done
+const highestMileage = cars.reduce(function (accumulator, car, index, carsArray) {
+    if (index === carsArray.length - 1) {
+        accumulator.push(car.mileage);
+        accumulator.sort(function (a, b) {
+            return b - a
+        });
+        return accumulator[0];
+    } else {
+        accumulator.push(car.mileage);
+        return accumulator;
+    }
+}, []);
 
-//HERE FOR STUDY
+console.log("The highest mileage is " + highestMileage);
+
+/*We could do this differently, with a reduce within a reduce. Since our accumulator is an array, on our last iteration we can run a reduce function on it. This is a standard reduce function that takes, by default, the first value in the array as the initial accumulator variable. It then takes each mileage stored in that accumulator array. The function we run here simply uses Math.max to compare the two values passed to reduce on each iteration, and return the highest one. This will compare 10428 to 9425 and return 10428, then compare 10428 to 2567 and return 10428, then compare 10428 to 14500 and return 14500, finally compare 14500 to 11248 and return 14500. Then we return the value stored as a variable resulting from that reduce within the reduce, and we also arrive at the highest mileage in the cars array.*/
 
 
-//
-// //Use .map to create an array of strings where each element is a user's email address
-// // es5
-// let emails = users.map(function(user){
-//     user = user.email;
-//     return user;
-// });
-// console.log(emails);
-// // es6
-// let es6emails = users.map(user => user.email);
-//
-// //Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
-//
-// let trilinguals = users.filter(function(user){
-//     return user.languages.length >= 3;
-// });
-//
-// //Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
-//
-// // es5
-// let totalYearsOfExperience = users.reduce(function(total, user){
-//     let yearsOfExperience = user.yearsOfExperience;
-//     return total + yearsOfExperience;
-// }, 0);
-//
-// console.log(totalYearsOfExperience);
-//
-// // es6
-// totalYearsOfExperience = users.reduce((total, user)=> total + user.yearsOfExperience, 0);
-//
-// console.log(totalYearsOfExperience);
-//
-// //Use .reduce to get the longest email from the list of users.
-//
-// // let emailsViaReduce = users.reduce(function(accumulator, user){
-// //     accumulator.push(user.email);
-// //     return accumulator;
-// // }, []);
-//
-// let longestEmail = users.reduce(function(accumulator, user, index, usersArray){
-//     if (index === usersArray.length -1){
-//         accumulator.push(user.email);
-//         accumulator.sort(function(email1, email2){
-//             return email2.length - email1.length;
-//         });
-//         return accumulator[0];
-//     } else {
-//         accumulator.push(user.email);
-//         return accumulator;
-//     }
-// }, []);
-//
-// console.log(longestEmail);
-//
-// const longestEmailbyHannahPaterka = users.reduce((longest, current) =>
-//     longest.email.length > current.email.length ? longest : current ).email;
-//
-// console.log(longestEmailbyHannahPaterka);
-//
-// const longestEmailByDavidCulver = users.reduce((longest, current) =>{
-//     if(current.email.length > longest.email.length){
-//         return current;
-//     } else {
-//         return longest;
-//     }
-// }).email;
-//
-// console.log(longestEmailByDavidCulver);
-//
-// // uses the emails array
-// let longestUserEmailByMathewWalker = emails.reduce((a, b) => a.length > b.length ? a : b);
-//
-// console.log(longestUserEmailByMathewWalker);
-//
-// var longestEmailByDavidWagnon = users.reduce(function (a, b) {
-//     return a.email.length > b.email.length ? a : b;
-// }).email;
-//
-// console.log(longestEmailByDavidWagnon);
-//
-// //Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
-//
-// let names = users.reduce(function(accumulator, user){
-//     accumulator.push(user.name);
-//     return accumulator;
-// }, []);
-//
-// let namesNicelyJoined = users.reduce(function(accumulator, user, index, usersArray){
-//     if (index === usersArray.length - 1){
-//         accumulator.push(user.name);
-//         let niceJoin = accumulator.join(', ');
-//         niceJoin = "Your instructors are: " + niceJoin + '.';
-//         return niceJoin;
-//     } else {
-//         accumulator.push(user.name);
-//         return accumulator;
-//     }
-// }, []);
-//
-// console.log(namesNicelyJoined);
-//
-// let usersStringByKarenValadez = users.reduce((accu, user, index) => {
-//     return index === 0 ? user.name : accu + ", " + user.name;
-// }, "");
-// console.log("The instructors are: " + usersStringByKarenValadez);
-//
-// // Bonus
-// // One possible approach
-// let userLanguages = users.reduce(function(accumulator, user){
-//     let listOfLanguages = accumulator.concat(user.languages);
-//     //let uniqueLanguages = new Set(listOfLanguages);
-//     return listOfLanguages;
-// }, []);
-//
-// let uniqueLanguages = new Set(userLanguages);
-// let uniqueLanguagesArray = Array.from(uniqueLanguages);
-//
-// console.log(userLanguages);
-// console.log(uniqueLanguagesArray);
-//
-// // Joshua Williams' solution
-//
-// let uniqueArrayByJoshuaWilliams = users.reduce(function (nameArray, user, index, array) {
-//     nameArray.push(...user.languages); //Using the .push(...Array) separates the array when we push it rather than pushing it normally, and using .push(Array), where we would get an array inside of an array.
-//     // nameArray = nameArray.concat(user.languages); //Using the concat method we can combine arrays, back to back.
-//     // nameArray = [...nameArray,...user.languages];
-//     // console.log(nameArray);
-//     if (index === array.length - 1) {
-//         // return getUniqueValues(nameArray);
-//         return [... new Set(nameArray)].sort(); // Set creates a new array with the unique values
-//     } else {
-//         return nameArray;
-//         // return getUniqueValues(nameArray);
-//     }
-// }, []);
-// console.log(uniqueArrayByJoshuaWilliams);
-//
-// // Javier's final solution
-//
-// userLanguages = users.reduce(function(accumulator, user){
-//     let languages = user.languages;
-//     for (let i = 0; i < languages.length; i++){
-//         if (!accumulator.includes(languages[i])){
-//             accumulator.push(languages[i]);
-//         }
-//     }
-//     return accumulator.sort();
-// }, []);
-//
-// console.log(userLanguages);
+// get lowest and highest values in a numerical array
+prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+
+let highLowPrices = prices.reduce(function (accumulatorArray, price, index, pricesArray) {
+    if (index === pricesArray.length - 1) {
+        accumulatorArray.push(price);
+        let returnArray = [];
+        accumulatorArray.sort(function (price1, price2) {
+            return price1 - price2;
+        });
+        let lowestPrice = accumulatorArray[0];
+        let highestPrice = accumulatorArray[accumulatorArray.length - 1];
+        returnArray.push(lowestPrice);
+        returnArray.push(highestPrice);
+        return returnArray;
+    } else {
+        accumulatorArray.push(price);
+        return accumulatorArray;
+    }
+}, []);
+
+console.log(highLowPrices);
+
+// array.slice(0,4).reduce();
