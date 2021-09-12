@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 * {
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
 :root {
     --colour-one: #ffd1b7;
     --colour-two: #fee4d4;
@@ -22,6 +24,7 @@ body {
     align-items: center;
     background: var(--colour-one);
 }
+
 .login_form {
     position: relative;
     border-bottom: 3px solid var(--colour-four);
@@ -29,27 +32,31 @@ body {
     background: var(--colour-one);
     height: 400px;
     width: 700px;
-    box-shadow: 10px 10px 6px 2px rgba(251,150,111,0.6);
+    box-shadow: 10px 10px 6px 2px rgba(251, 150, 111, 0.6);
     overflow: hidden;
 }
+
 .details {
     position: relative;
     background: var(--colour-two);
     height: 400px;
     width: 350px;
 }
+
 .welcome {
     position: absolute;
     color: var(--colour-six);
     top: 30%;
     right: 20%;
 }
+
 .wrap:nth-child(1) {
     position: absolute;
     top: 35%;
     left: 20%;
     margin: 12px;
 }
+
 .wrap:nth-child(2) {
     position: absolute;
     top: 50%;
@@ -57,6 +64,7 @@ body {
     font-size: 15px;
     margin: 12px;
 }
+
 .wrap:nth-child(3) {
     position: absolute;
     top: 68%;
@@ -64,18 +72,21 @@ body {
     font-size: 15px;
     margin: 12px;
 }
+
 .input {
     border: 1px solid var(--colour-three);
     padding: 5px 20px;
     margin: 5px;
     border-radius: 5px;
     background: none;
-    box-shadow: inset 10px 10px 6px -5px rgba(255,209,183,1);
+    box-shadow: inset 10px 10px 6px -5px rgba(255, 209, 183, 1);
 }
+
 label {
     color: var(--colour-eight);
     display: block;
 }
+
 .button {
     background: var(--colour-six);
     position: absolute;
@@ -87,34 +98,40 @@ label {
     border-radius: 10px;
     border: none;
 }
+
 .button .sign {
     color: #fff;
     font-size: 15px;
 }
+
 .fox {
     position: absolute;
     top: 25%;
     left: 55%;
     height: 18%;
 }
+
 .back {
     position: absolute;
     top: 44%;
     left: 56%;
     font-size: 20px;
 }
+
 .log {
     position: absolute;
     top: 50%;
     left: 56%;
     font-size: 14px;
 }
+
 .acc {
     position: absolute;
     top: 62%;
     left: 56%;
     font-size: 15px;
 }
+
 .customer {
     position: absolute;
     top: 72%;
@@ -124,6 +141,7 @@ label {
     border-radius: 5px;
     border: none;
 }
+
 .res {
     position: absolute;
     top: 72%;
@@ -133,25 +151,30 @@ label {
     border-radius: 5px;
     border: none;
 }
+
 h3 {
     font-size: 14px;
     color: var(--colour-five);
     padding: 5px;
 }
+
 .forgot {
     position: absolute;
     bottom: 10px;
     left: 5px;
 }
+
 .keep-me {
     position: absolute;
     bottom: 10px;
     left: 30%;
     font-size: 16px;
 }
+
 a:hover {
     color: green;
 }
+
 .details-sign {
     position: relative;
     background: var(--colour-two);
@@ -160,8 +183,9 @@ a:hover {
     right: 10%;
     bottom: 20%;
 }
+
 .new-account {
-   position: absolute;
+    position: absolute;
     left: 2%;
     bottom: 120px;
 }

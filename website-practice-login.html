@@ -2,39 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Project-21-login</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title> website-practice-login</title>
     <link rel="stylesheet" href="css/website-practice.css">
 </head>
-<body>
+<body class="container my-5">
 <form method="POST" action="https://request-inspector.glitch.me/">
     <section class="login_form">
         <div class="details">
             <div class="welcome">Welcome to Project-21</div>
             <div class="wrap">
-    <label for="email">Email</label>
-    <input class="input" id="email" name="email" type="email" required placeholder="Email@project21.us">
-        </div>
+                <label for="email">Email</label>
+                <input class="input" id="email" name="email" type="email" required placeholder="Email@project21.us">
+            </div>
             <div class="wrap">
-    <label for="password">Password</label>
-    <input class="input" id="password" name="password" type="password" required placeholder="Password">
+                <label for="password">Password</label>
+                <input class="input" id="password" name="password" type="password" required placeholder="Password">
             </div>
             <div class="forgot">
                 <label><a href="languages.html">Forgot password?</a></label>
             </div>
-            <button type="submit" class="button"><h1 class="sign">Sign in!</h1></button>
+            <button type="submit" class="button">class="sign">Sign in!</button>
         </div>
         <div class="keep-me">
-    <input name="connected" type="checkbox" checked><span>Keep me logged</span>
+            <input name="connected" type="checkbox" checked><span>Keep me logged</span>
         </div>
         <div>
-            <img class="fox" src="img/squirrel.jpeg">
+            <img class="fox rounded-3" src="img/squirrel.jpeg">
         </div>
         <div>
             <h1 class="back">Welcome back!</h1>
             <p class="log">Log in and use the opportunities offered by our portal.</p>
             <h2 class="acc">You don't have an account?<br>Create</h2>
-            <button class="customer"><h3><a href="website-practice-sigin.html">Create Account</a></h3></button>
-            <button class="res"><h3><a href="property-search-HTML.html">Restaurant Account</a></h3></button>
+            <button class="customer"><a href="website-practice-register.html">Create Account</a></button>
+            <button class="res"><a href="property-search-HTML.html">Restaurant Account</a></button>
         </div>
     </section>
 </form>

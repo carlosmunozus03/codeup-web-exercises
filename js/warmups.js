@@ -89,3 +89,25 @@ console.log(multipliedBy5(5));
 //     console.log(multiplyByFive(false));
 //
 // })();
+
+for (let i = 1; i <= 30; i++) {
+    if (i % 5 === 0 && i % 3 === 0) {
+        console.log('FizzBuzz');
+    } else if (i % 5 === 0) {
+        console.log('Buzz');
+    } else if (i % 3 === 0) {
+        console.log('Fizz');
+    } else {
+        console.log(i);
+    }
+}
+
+function isSeven(number) {
+    if (number === 7) {
+        return 7;
+    } else {
+        return 7;
+    }
+}
+
+isSeven(2);
