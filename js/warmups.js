@@ -90,15 +90,15 @@ console.log(multipliedBy5(5));
 //
 // })();
 
-for (let i = 1; i <= 30; i++) {
+for (i = 1; i <= 15; i++) {
     if (i % 5 === 0 && i % 3 === 0) {
-        console.log('FizzBuzz');
+        console.log("FizzBuzz")
     } else if (i % 5 === 0) {
-        console.log('Buzz');
+        console.log("Fizz")
     } else if (i % 3 === 0) {
-        console.log('Fizz');
+        console.log("Buzz")
     } else {
-        console.log(i);
+        console.log(i)
     }
 }
 
@@ -111,3 +111,11 @@ function isSeven(number) {
 }
 
 isSeven(2);
+
+const returnFour = () => 4;
+console.log(returnFour())
+
+const multipliedBy2 = number => typeof number === "number" ? 2 : 0
+console.log(multipliedBy2(2));
+console.log(multipliedBy2(3));
+console.log(multipliedBy2("hello"))
