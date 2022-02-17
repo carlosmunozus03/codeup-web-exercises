@@ -47,3 +47,51 @@ const car = [{
         }
     }];
 console.log(car);
+
+console.log(car);
+
+
+//Count specific vocals function only lowercase
+function charCount(sentence, letter) {
+    let letterCount = 0;
+    for (let position = 0; position < sentence.length; position++) {
+        if (sentence.charAt(position) === letter) {
+            letterCount += 1;
+        }
+    }
+    return letterCount;
+}
+
+console.log(charCount("A big fat lazy dog jumped over the moon", "a"));
+
+//Next problem
+const {a: b = 11, c = 6} = {a: 3};
+console.log("The value of b is: " + b + " and the value of c is: " + c);
+
+//Add a new properties to an already exist object
+const becky = {firstName: "Becky", lastName: "Smith"};
+console.log(becky);
+becky.age = 20;
+console.log(becky);
+
+
+
+let numbers = [-100, 10, 15, -20, 200];
+console.log(numbers)
+numbers.sort();
+console.log(numbers);
+
+// for (let i = 1; i <= 200; i++) {
+//     if (i % 3 === 0) {
+//         console.log(i)
+//     }
+// }
+
+const person1 = {
+    name: 'Jamie',
+    age: 24,
+    colorEye: 'green',
+    idNumber: 5000
+};
+console.log(person1);
+
