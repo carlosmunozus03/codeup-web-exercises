@@ -75,7 +75,6 @@ becky.age = 20;
 console.log(becky);
 
 
-
 let numbers = [-100, 10, 15, -20, 200];
 console.log(numbers)
 numbers.sort();
@@ -88,10 +87,23 @@ console.log(numbers);
 // }
 
 const person1 = {
-    name: 'Jamie',
+    name: "Jamie",
     age: 24,
-    colorEye: 'green',
+    colorEye: "green",
     idNumber: 5000
 };
 console.log(person1);
+
+console.log("-----------------")
+for (let i = 1; i <= 15; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log("FizzBuzz");
+    } else if (i % 5 === 0) {
+        console.log("Fizz");
+    } else if (i % 3 === 0) {
+        console.log("Buzz");
+    } else {
+        console.log(i);
+    }
+}
 
